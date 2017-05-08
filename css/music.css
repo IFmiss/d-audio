@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 5, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,45 +24,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -158,7 +158,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .music-div .music-play-div .pauseplay i {
   font-size: 22px;
   display: block;
-  margin: 0 auto;
   color: rgba(244, 244, 244, 0.56);
 }
 /* line 79, ../sass/music.scss */
@@ -196,7 +195,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .music-div .music-play-div .next i {
   color: rgba(244, 244, 244, 0.56);
   display: block;
-  margin: 0 auto;
   font-size: 14px;
 }
 /* line 111, ../sass/music.scss */
@@ -213,8 +211,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   flex: 1 1 auto;
   margin-left: 10px;
   overflow: hidden;
+  height: 35px;
 }
-/* line 120, ../sass/music.scss */
+/* line 121, ../sass/music.scss */
 .music-div .music-play-div .music-info p {
   display: block;
   text-align: center;
@@ -227,7 +226,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-family: 'Microsoft YaHei';
   line-height: initial;
 }
-/* line 128, ../sass/music.scss */
+/* line 129, ../sass/music.scss */
 .music-div .music-play-div .music-info p.music-name {
   flex: 1;
   color: #fff;
@@ -237,7 +236,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-user-select: none;
   user-select: none;
 }
-/* line 135, ../sass/music.scss */
+/* line 136, ../sass/music.scss */
 .music-div .music-play-div .music-info p.music-singer {
   flex: 1;
   color: #eee;
@@ -247,7 +246,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-user-select: none;
   user-select: none;
 }
-/* line 145, ../sass/music.scss */
+/* line 146, ../sass/music.scss */
 .music-div .music-typeSelect {
   position: absolute;
   width: 100%;
@@ -261,7 +260,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   left: 0;
   color: #fff;
 }
-/* line 156, ../sass/music.scss */
+/* line 157, ../sass/music.scss */
 .music-div .music-typeSelect div {
   -webkit-flex: 1;
   flex: 1;
@@ -281,7 +280,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 14px;
   cursor: pointer;
 }
-/* line 167, ../sass/music.scss */
+/* line 168, ../sass/music.scss */
 .music-div .music-typeSelect div:not(:last-child):after {
   content: '';
   height: 60%;
@@ -294,18 +293,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-transform: translate3d(0, -50%, 0);
   transform: translate3d(0, -50%, 0);
 }
-/* line 178, ../sass/music.scss */
+/* line 179, ../sass/music.scss */
 .music-div .music-typeSelect div:active {
   background: rgba(255, 255, 255, 0.1);
 }
-/* line 184, ../sass/music.scss */
+/* line 185, ../sass/music.scss */
 .music-div .music-div-logo {
   width: auto;
   height: auto;
   position: relative;
   display: none;
 }
-/* line 190, ../sass/music.scss */
+/* line 191, ../sass/music.scss */
 .music-div .music-div-logo .music-logo {
   width: 58px;
   height: 58px;
@@ -319,7 +318,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
-/* line 197, ../sass/music.scss */
+/* line 198, ../sass/music.scss */
 .music-div .music-div-logo .music-logo.active {
   -moz-animation-play-state: running;
   -webkit-animation-play-state: running;
@@ -358,7 +357,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transform: rotate(360deg);
   }
 }
-/* line 246, ../sass/music.scss */
+/* line 247, ../sass/music.scss */
 .music-div.circle {
   padding: 0;
   height: 58px !important;
@@ -367,11 +366,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-/* line 253, ../sass/music.scss */
+/* line 254, ../sass/music.scss */
 .music-div.circle .music-play-div {
   display: none;
 }
-/* line 257, ../sass/music.scss */
+/* line 258, ../sass/music.scss */
 .music-div.circle .music-div-logo {
   display: block;
 }

@@ -73,7 +73,7 @@
 			i{
 				font-size: 22px;
 				display: block;
-				margin: 0 auto;
+				// margin: 0 auto;
 				color:rgba(244,244,244,0.56);
 				
 				&.fa-play{
@@ -103,7 +103,7 @@
 			i{
 				color:rgba(244,244,244,0.56);
 				display: block;
-				margin: 0 auto;
+				// margin: 0 auto;
 				font-size:14px;
 			}
 		}
@@ -116,6 +116,7 @@
 			@include flex(1 1 auto);
 			margin-left: 10px;
 			overflow: hidden;
+			height: 35px;
 
 			p{
 				display: block;
@@ -259,3 +260,4 @@
 		}
 	}
 }
+
