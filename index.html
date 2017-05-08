@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>音乐 | 未曾遗忘的青春</title>
+	<link rel="shortcut icon" href="http://www.daiwei.org/index/images/logo/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+	<link rel="stylesheet" href="http://www.daiwei.org/global/css/animate.css">
+	<link rel="stylesheet" href="fonts/fontCss.css">
+	<!-- <link rel="stylesheet" type="text/css" href="http://www.daiwei.org/global.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/music.css">
+</head>
+
+<style>
+	body,html{
+		margin:0;
+		padding: 0;
+		background: #000;
+		height: 100%;
+	}
+</style>
+
+<body>
+	<div class="music-bg" style="height: 100%;filter: blur(100px);transition:all 0.3s" id="music-bg">
+		<div class="music-mask"></div>
+	</div>
+</body>
+</body>
+<script src="http://www.daiwei.org/global/js/jquery.js"></script>
+<script src="http://www.daiwei.org/global/js/componentJs.js"></script>
+<script src="js/music.js"></script>
+<script>
+	window.onload = function(){
+		$api.dw_music({
+			hasAjax:false,
+			musicChanged:function(ret){
+				// alert(ret.url);
+				// getMusic_buffer(ret.url);
+				// return;
+				var data = ret.data;
+				var index = ret.index;
+				var imageUrl = data[index].img_url;
+				
+				var music_bg = document.getElementById('music-bg');
+				music_bg.style.background = 'url('+imageUrl+')no-repeat';
+				music_bg.style.backgroundSize = 'cover';
+				music_bg.style.backgroundPosition = 'center 30%';
+			},
+
+			getMusicInfo:function(data){
+				
+			},
+
+			musicPlayByWebAudio:function(ret){
+				
+			},
+		});
+	}
+</script>
+
+</html>
