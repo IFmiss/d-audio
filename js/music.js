@@ -1,17 +1,16 @@
 (function($,window){
     var DW = {};
     //音乐播放器插件
-    DW.dw_music = function(options) {
+    DW.music = function(options) {
         var musicValue = {
             width:                  260,                        //宽度
             height:                 56,                         //高度
             hasBlur:                true,                       //是否显示模糊效果
             blur:                   8,                          //模糊的数值
-            // top:                     0,
             left:                   0,
             right:                  30,
             bottom:                 30,
-            direction:              'bottomrigght',                 //bottomrigght
+            direction:              'bottomright',              //bottomright  bottomleft
             btnBackground:          'rgba(0,0,0,0.2)',          //按钮背景色
             iconColor:              'rgba(250,250,250.0.2)',    //图标背景色
             hasSelect:              true,                       //是否可选择音乐类型
@@ -51,15 +50,13 @@
                                         position:1,
                                         color:'#FC8F3F',
                                     }],
-            //滚动列表正在播放的背景色
-            scrollActiveBg:         'rgba(224, 189, 134, 0.298039)',
+            //滚动列表正在播放的背景色  //配合长按事件使用
+            // scrollActiveBg:         'rgba(224, 189, 134, 0.298039)',
 
             beforeMusicPlay:function(){},                               //音乐加载之前   可以播放之前
             afterMusicLoading:function(){},                             //音乐加载成功  可播之后
             musicChanged:function(){},                                  //音乐切换之后，类似切歌
             getMusicInfo:function(){},                                  //获取所有音乐信息
-            click:function(){},                                         //播放第n个音乐
-            musicPlayByWebAudio:function(){},                           //webAudio播放
         }
 
 
