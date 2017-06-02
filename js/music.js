@@ -323,6 +323,10 @@
                 if(keycode == 39 || keycode == 40 && !$('input').is(':focus')){
                     musicValue._playNext();
                 }
+
+                if(keycode == 37 || keycode == 38 && !$('input').is(':focus')){
+                    musicValue._playPrev();
+                }
             }
         };
 
@@ -336,6 +340,31 @@
             })
         };
 
+        //播放上一首音乐
+        musicValue._playPrev = function(){
+            musicValue._showMusicLoading('music_play_next');
+
+            //通过data-index+1来播放下一集
+            var index = _this.audio.attr('data-index')*1 - 1;
+            if(index < 0){
+                index = musicLenth-1;
+            }
+
+            musicValue._insertData(musicData,index);
+            musicValue._playPause();
+
+            if($('.cpt-selectScrollMenu').length){
+                $('.cpt-selectScrollMenu').find('li').eq(index).css({
+                    background:opt.scrollActiveBg,
+                    // color:'#fff',
+                }).siblings().css({
+                    background:'#fff',
+                    // color:'#fff',
+                });
+            }
+
+            // opt.musicChanged(index);
+        };
 
         //点击下一首音乐事件
         musicValue._playNext = function(){
