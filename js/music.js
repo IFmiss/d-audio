@@ -232,8 +232,8 @@
         //暂停
         musicValue._pause = function(){
             _this.audio[0].pause();
-            _this.music_img.removeClass('active');
-            _this.music_status.find('i').removeClass('dw-icon-pause').addClass('dw-icon-play');
+            // _this.music_img.removeClass('active');
+            // _this.music_status.find('i').removeClass('dw-icon-pause').addClass('dw-icon-play');
         };
 
         //播放
@@ -250,12 +250,8 @@
                 if(_this.audio[0].paused){
                     musicValue._showMusicLoading('music_play_index');
                     _this.audio[0].play();
-                    _this.music_img.addClass('active');
-                    _this.music_status.find('i').removeClass('dw-icon-play').addClass('dw-icon-pause');
                 }else{
                     _this.audio[0].pause();
-                    _this.music_img.removeClass('active');
-                    _this.music_status.find('i').removeClass('dw-icon-pause').addClass('dw-icon-play');
                 }
             } catch (e){
                 DW.showMessage(e.name + ": " + e.message);
@@ -293,12 +289,41 @@
         musicValue._onwaiting = function(){
             _this.audio.on('waiting',function(){
                 musicValue._showMusicLoading('music_waiting');
+            });
+        };
+
+        //监听音乐是否暂停
+        musicValue._onpause = function(){
+            _this.audio.on('pause',function(){
+                _this.music_img.removeClass('active');
+                _this.music_status.find('i').removeClass('dw-icon-pause').addClass('dw-icon-play');
+            })
+        };
+
+        //监听音乐是否暂停
+        musicValue._onplay = function(){
+            _this.audio.on('play',function(){
+                _this.music_img.addClass('active');
+                _this.music_status.find('i').removeClass('dw-icon-play').addClass('dw-icon-pause');
             })
         };
 
         //跳动进度的时候执行
-        musicValue._seeked = function(){
+        // musicValue._seeked = function(){
 
+        // };
+
+        musicValue._keyPress = function(){
+            document.onkeydown = function(e) {
+                var keycode = e.which || window.event.keyCode;
+                if(keycode == 32 && !$('input').is(':focus')){
+                    musicValue._playPause();
+                }
+
+                if(keycode == 39 || keycode == 40 && !$('input').is(':focus')){
+                    musicValue._playNext();
+                }
+            }
         };
 
         //自定义选择音乐类型事件 
@@ -373,6 +398,15 @@
 
             //当媒介已停止播放但打算继续播放时运行脚本
             musicValue._onwaiting();
+
+            //音乐暂停会触发事件   主要是图标的改动
+            musicValue._onpause();
+
+            //音乐暂停会触发事件   主要是图标的改动
+            musicValue._onplay();
+
+            //按键事件  控制音乐播放
+            musicValue._keyPress();
         };
 
         //给dom装填数据
