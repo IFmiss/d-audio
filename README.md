@@ -13,7 +13,7 @@
 * left:music left 的值<br>
 * right:music right 的值<br>
 * bottom: music bottom 的值<br>
-* direction:左下还是右下角   bottomleft bottomright(left、right、bottom设置)<br>
+* top: music top 的值<br>
 * btnBackground:播放暂停按钮的背景色,不包括图标<br>
 * iconColor:播放暂停按钮的图标颜色<br>
 * hasSelect:是否可选择类型 (音乐的类型,在js中以静态数组的形式显示,可以的话从后台获取)<br>
@@ -30,8 +30,8 @@
 
 <pre>
   $api.music({
-		hasAjax:false,
-    musicChanged:function(ret){
+      hasAjax:false,
+      musicChanged:function(ret){
       var data = ret.data;
       var index = ret.index;
       var imageUrl = data[index].img_url;
