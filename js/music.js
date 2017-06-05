@@ -7,10 +7,11 @@
             height:                 56,                         //高度
             hasBlur:                true,                       //是否显示模糊效果
             blur:                   8,                          //模糊的数值
-            left:                   0,
-            right:                  30,
-            bottom:                 30,
-            direction:              'bottomright',              //bottomright  bottomleft
+            left:                   'auto',                     //音乐的位置 :left
+            right:                  'auto',                     //音乐的位置 :right
+            bottom:                 'auto',                     //音乐的位置 :bottom
+            top:                    'auto',                     //音乐的位置 :top
+            isCenter:               true,                       //是否居中显示  translate
             btnBackground:          'rgba(0,0,0,0.2)',          //按钮背景色
             iconColor:              'rgba(250,250,250.0.2)',    //图标背景色
             hasSelect:              true,                       //是否可选择音乐类型
@@ -69,19 +70,35 @@
 
         //音乐dom初始化
         musicValue._init = function(){
-            if(opt.direction == 'bottomleft'){
+            if(opt.isCenter){
                 _this.cpt_music = $('<div class="cpt-dw-music music-div active"></div>').css({
                     width:opt.width,
                     height:opt.height,
                     bottom:opt.bottom,
-                    left:opt.left
+                    left:opt.left,
+                    right:opt.right,
+                    top:opt.top,
+                    '-webkit-transform':'translate3d(-50%,-50%,0)',
+                    '-moz-transform':'translate3d(-50%,-50%,0)',
+                    'transform':'translate3d(-50%,-50%,0)',
+                    '-webkit-transform':'translate(-50%,-50%)',
+                    '-moz-transform':'translate(-50%,-50%)',
+                    'transform':'translate(-50%,-50%)',
                 }).appendTo($('body'));
             }else{
                 _this.cpt_music = $('<div class="cpt-dw-music music-div active"></div>').css({
                     width:opt.width,
                     height:opt.height,
-                    right:opt.right,
                     bottom:opt.bottom,
+                    left:opt.left,
+                    right:opt.right,
+                    top:opt.top,
+                    '-webkit-transform':'translate3d(-50%,-50%,0)',
+                    '-moz-transform':'translate3d(-50%,-50%,0)',
+                    'transform':'translate3d(-50%,-50%,0)',
+                    '-webkit-transform':'translate(-50%,-50%)',
+                    '-moz-transform':'translate(-50%,-50%)',
+                    'transform':'translate(-50%,-50%)',
                 }).appendTo($('body'));
             }
             _this.music_play = $('<div class="music-play-div"></div>').appendTo(_this.cpt_music);
