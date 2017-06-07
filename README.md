@@ -1,5 +1,5 @@
 # music
-[![](https://img.shields.io/badge/demo-music-green.svg)](http://www.daiwei.org/music)<br>
+[![](https://img.shields.io/badge/demo-music-green.svg)](http://www.daiwei.org/components/music)<br>
 简洁的音乐播放器插件
 
 ### 插件参数
@@ -29,7 +29,7 @@
 * getMusicInfo:function(ret){}    获取所有音乐的信息<br>
 
 <pre>
-  $api.music({
+  MC.music({
       hasAjax:false,
       musicChanged:function(ret){
       var data = ret.data;
@@ -44,6 +44,8 @@
   });
 </pre>
 
-$api  可以在music.js倒数第二行更改你想要的名称
+为了方便 我把我自己写的loading插件和music.js放在一起 
+MC  可以在music.js倒数第二行更改你想要的名称
 
-在线演示地址: http://www.daiwei.org/music
+插件演示地址: http://www.daiwei.org/components/music
+插件扩展演示地址: http://www.daiwei.org/music
