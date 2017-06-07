@@ -27,12 +27,12 @@
 </body>
 </body>
 <script src="http://www.daiwei.org/global/js/jquery.js"></script>
-<script src="http://www.daiwei.org/global/js/componentJs.js"></script>
+<!-- <script src="http://www.daiwei.org/global/js/componentJs.js"></script> -->
 <script src="js/music.js"></script>
 <script>
 	window.onload = function(){
-		$api.music({
-			hasAjax:false,
+		MC.music({
+			hasAjax:true,
 			left:'50%',
 			bottom:'50%',
 			musicChanged:function(ret){

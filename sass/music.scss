@@ -10,6 +10,7 @@
 @import "compass/typography/text/ellipsis";
 @import "compass/typography/links/link-colors";
 
+//音乐播放的样式
 .music-div{
 	position: fixed;
 	right: 20px;
@@ -260,4 +261,386 @@
 		}
 	}
 }
+
+//loading的样式
+//这是Loading的自定义组件样式
+.cpt-loading-mask *{
+	@include box-sizing(border-box);
+}
+.cpt-loading-mask{
+	&.column{
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background:transparent; 
+		z-index: 100;
+		@include translateZ(0);
+		@include user-select(none);
+
+		.div-loading{
+			position:absolute;
+			top:50%;
+			left:50%;
+			width: 260px;
+			background:rgba(0,0,0,0.6);
+			@include translate(-50%,-50%);
+			@include translate3d(-50%,-50%,0);
+			@include border-radius(12px);
+			padding: 16px;
+
+			.loading{
+				position: relative;
+				width: 60px;
+				height: 60px;
+				background: transparent;
+				margin: 0 auto;
+				
+				&.origin{
+					div{
+						width: 80%;
+						height: 80%;
+						position: absolute;
+						left: 10%;
+						top: 10%;
+						@include opacity(1);
+						@include animation(load 2.28s linear infinite);
+
+						span{
+							display: inline-block;
+							width: 8px;
+							height: 8px;
+							border-radius: 50%;
+							background: #FBC9B9;
+							position: absolute;
+							left: 50%;
+							margin-top: -10px;
+							margin-left: -10px;
+
+						}
+
+						&:nth-child(1){
+							@include animation-delay(0.2s);
+						}
+						&:nth-child(2){
+							@include animation-delay(0.4s);
+						}
+						&:nth-child(3){
+							@include animation-delay(0.6s);
+						}
+						&:nth-child(4){
+							@include animation-delay(0.8s);
+						}
+						&:nth-child(5){
+							@include animation-delay(1s);
+						}
+					}
+				}
+
+				&.pic{
+					width: 80px;
+					height: 80px;
+
+					img{
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+
+			.loading-title{
+				width: 100%;
+				text-align: center;
+				color: #fff;
+				font-size: 16px;
+				// margin: 15px 0;
+				margin-bottom: 20px;
+				@include ellipsis();
+			}
+
+			.loading-discription{
+				width: 100%;
+				text-align: center;
+				color: #fff;
+				font-size: 12px;
+				// margin: 15px 0;
+				margin-top:20px;
+			}
+		}
+	}
+
+	&.row{
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background:transparent; 
+		z-index: 100;
+		@include translateZ(0);
+		@include user-select(none);
+
+		.div-loading{
+			position:absolute;
+			top:50%;
+			left:50%;
+			width: 260px;
+			background:rgba(0,0,0,0.6);
+			@include display-flex;
+			@include align-items(center);
+			@include justify-content(center);
+			@include flex-direction(row-reverse);
+			@include translate(-50%,-50%);
+			@include translate3d(-50%,-50%,0);
+			@include border-radius(12px);
+			padding: 15px;
+
+			.loading{
+				position: relative;
+				width: 60px;
+				height: 60px;
+				background: transparent;
+				// margin: 0 auto;
+				float: left;
+				
+				&.origin{
+					div{
+						width: 80%;
+						height: 80%;
+						position: absolute;
+						left: 10%;
+						top: 10%;
+						@include opacity(1);
+						@include animation(load 2.28s linear infinite);
+
+						span{
+							display: inline-block;
+							width: 8px;
+							height: 8px;
+							border-radius: 50%;
+							background: #FBC9B9;
+							position: absolute;
+							left: 50%;
+							margin-top: -10px;
+							margin-left: -10px;
+
+						}
+
+						&:nth-child(1){
+							@include animation-delay(0.2s);
+						}
+						&:nth-child(2){
+							@include animation-delay(0.4s);
+						}
+						&:nth-child(3){
+							@include animation-delay(0.6s);
+						}
+						&:nth-child(4){
+							@include animation-delay(0.8s);
+						}
+						&:nth-child(5){
+							@include animation-delay(1s);
+						}
+					}
+				}
+
+				&.pic{
+					width: 80px;
+					height: 80px;
+
+					img{
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+
+			.loading-title{
+				width: 72%;
+				text-align: center;
+				color: #fff;
+				font-size: 16px;
+				padding: 2px 0;
+				padding-left: 20px;
+				// margin: 15px 0;
+				margin-bottom: 0;
+				@include ellipsis();
+			}
+
+			.loading-discription{
+				display: none;
+				width: 100%;
+				text-align: center;
+				color: #fff;
+				font-size: 12px;
+				// margin: 15px 0;
+				margin-top:20px;
+			}
+		}
+	}
+}
+
+
+//***************************************fadeInNoTransform
+@-webkit-keyframes fadeInNoTransform{
+	0%{opacity:0;}
+	100%{opacity:1;}
+}
+
+@keyframes fadeInNoTransform{
+	0%{opacity:0;}
+	100%{opacity:1;}
+}
+
+.fadeInNoTransform{-webkit-animation-name:fadeInNoTransform;animation-name:fadeInNoTransform}
+
+//***************************************fadeOutNoTransform
+@-webkit-keyframes fadeOutNoTransform{
+	0%{opacity:1;}
+	100%{opacity:0;}
+}
+
+@keyframes fadeOutNoTransform{
+	0%{opacity:1;}
+	100%{opacity:0;}
+}
+
+.fadeOutNoTransform{-webkit-animation-name:fadeOutNoTransform;animation-name:fadeOutNoTransform}
+
+
+@-webkit-keyframes load{
+	0%{
+		@include rotate(0deg);
+	}
+	10%{
+		@include rotate(45deg);
+	}
+	50%{
+		@include opacity(1);
+		@include rotate(160deg);
+	}
+	62%{
+		@include opacity(0);
+	}
+	65%{
+		@include opacity(0);
+		@include rotate(200deg);
+	}
+	90%{
+		@include rotate(340deg);
+	}
+	100%{
+		@include rotate(360deg);
+	}
+}
+
+@-moz-keyframes load{
+	0%{
+		@include rotate(0deg);
+	}
+	10%{
+		@include rotate(45deg);
+	}
+	50%{
+		@include opacity(1);
+		@include rotate(160deg);
+	}
+	62%{
+		@include opacity(0);
+	}
+	65%{
+		@include opacity(0);
+		@include rotate(200deg);
+	}
+	90%{
+		@include rotate(340deg);
+	}
+	100%{
+		@include rotate(360deg);
+	}
+}
+
+@-ms-keyframes load{
+	0%{
+		@include rotate(0deg);
+	}
+	10%{
+		@include rotate(45deg);
+	}
+	50%{
+		@include opacity(1);
+		@include rotate(160deg);
+	}
+	62%{
+		@include opacity(0);
+	}
+	65%{
+		@include opacity(0);
+		@include rotate(200deg);
+	}
+	90%{
+		@include rotate(340deg);
+	}
+	100%{
+		@include rotate(360deg);
+	}
+}
+
+@-o-keyframes load{
+	0%{
+		@include rotate(0deg);
+	}
+	10%{
+		@include rotate(45deg);
+	}
+	50%{
+		@include opacity(1);
+		@include rotate(160deg);
+	}
+	62%{
+		@include opacity(0);
+	}
+	65%{
+		@include opacity(0);
+		@include rotate(200deg);
+	}
+	90%{
+		@include rotate(340deg);
+	}
+	100%{
+		@include rotate(360deg);
+	}
+}
+
+@keyframes load{
+	0%{
+		@include rotate(0deg);
+	}
+	10%{
+		@include rotate(45deg);
+	}
+	50%{
+		@include opacity(1);
+		@include rotate(160deg);
+	}
+	62%{
+		@include opacity(0);
+	}
+	65%{
+		@include opacity(0);
+		@include rotate(200deg);
+	}
+	90%{
+		@include rotate(340deg);
+	}
+	100%{
+		@include rotate(360deg);
+	}
+}
+
 

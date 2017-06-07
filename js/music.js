@@ -1,3 +1,7 @@
+// 音乐播放插件 
+// 只包括播放暂停，下一曲  以及显示歌曲名称 歌手以及 实时进度
+// github： https://github.com/IFmiss/music
+
 (function($,window){
     var DW = {};
     //音乐播放器插件
@@ -17,7 +21,7 @@
             hasSelect:              true,                       //是否可选择音乐类型
             hasAjax:                true,                       //是否是ajax请求数据
             selectClassName:        'select-type',              //选择类型按钮的className名称
-            musicType:              ['纯音乐','华语','欧美','霉霉','电音','韩国','爱乐之城','网络歌曲'],         //音乐的类型  （需要随机显示）;
+            musicType:              ['纯音乐','华语','欧美','霉霉','电音','韩国','爱乐之城','网络歌曲'],         //音乐的类型  （需要随机显示）这是结合我自己后台数据库使用的 如果不是用ajax请求是不会显示这个类型的;
             source:                 [
                                         {
                                             name:'告白气球',
@@ -44,9 +48,11 @@
 
             //进度信息
             durationBg:             'rgba(255,255,255,0)',
+
+            // 线性渐变的颜色
             progressBg:             [{
-                                        position:0,
-                                        color:'#FB3232',
+                                        position:0,         //0 是起点, 1为终点   范围为  0 - 1 之间
+                                        color:'#FB3232',    //起点的颜色   
                                     },{
                                         position:1,
                                         color:'#FC8F3F',
@@ -167,7 +173,7 @@
         //随机设置类型
         musicValue._randomSelect = function(index){
             var arr = opt.musicType;
-            var new_arr = $DW.getRandomElementFromArr(arr,index);
+            var new_arr = musicValue.getRandomElementFromArr(arr,index);
             for(var i = 0;i < index; i++){
                 _this.music_typeSelect.find('.music-typeSelect').eq(i+1).text(new_arr[i]).attr('data-type',new_arr[i]);
             };
@@ -233,15 +239,15 @@
             //添加加载浮层
             $('.music-div').loading({
                 name:name,
-                hasTitle:false,
-                hasDescription:false,
+                title:'',
+                discription:'',
                 originDivWidth:30,
                 originDivHeight:30,
-                // smallLoading:true,
+                flexCenter:true,
                 originWidth:5,
                 originHeight:5,
-                loadingWidth:260,
-                loadingHeight:60,
+                loadingWidth:opt.width + 20,
+                loadingHeight:opt.height,
                 originBg:'rgba(34,222,44,0.5)'
             });
         };
@@ -255,7 +261,6 @@
 
         //播放
         musicValue._play = function(){
-            musicValue._showMusicLoading('music_play_index');
             _this.audio[0].play();
             _this.music_img.addClass('active');
             _this.music_status.find('i').removeClass('dw-icon-play').addClass('dw-icon-pause');
@@ -265,7 +270,6 @@
         musicValue._playPause = function(){
             try{
                 if(_this.audio[0].paused){
-                    musicValue._showMusicLoading('music_play_index');
                     _this.audio[0].play();
                 }else{
                     _this.audio[0].pause();
@@ -290,16 +294,13 @@
         //音频处于播放状态的事件
         musicValue._onplaying = function(){
             _this.audio.on('playing',function(){
-                $dw.removeLoading('music_waiting');
-                $dw.removeLoading('music_play_index');
-                $dw.removeLoading('music_play_next');
-                $dw.removeLoading('music_play_index');
+                DW.removeLoading('music_waiting');
             });
 
-            var dw_audio = document.getElementById('cpt_dw_music');
-            dw_audio.addEventListener('canplay',function(){
-                musicValue._showLoading(dw_audio);
-            });
+            // var dw_audio = document.getElementById('cpt_dw_music');
+            // dw_audio.addEventListener('canplay',function(){
+            //     musicValue._showLoading(dw_audio);
+            // });
         };
 
         //音频需要加载之后才播放事件
@@ -359,8 +360,6 @@
 
         //播放上一首音乐
         musicValue._playPrev = function(){
-            musicValue._showMusicLoading('music_play_next');
-
             //通过data-index+1来播放下一集
             var index = _this.audio.attr('data-index')*1 - 1;
             if(index < 0){
@@ -379,14 +378,10 @@
                     // color:'#fff',
                 });
             }
-
-            // opt.musicChanged(index);
         };
 
         //点击下一首音乐事件
         musicValue._playNext = function(){
-            musicValue._showMusicLoading('music_play_next');
-
             //通过data-index+1来播放下一集
             var index = _this.audio.attr('data-index')*1 + 1;
             if(index >= musicLenth){
@@ -405,13 +400,9 @@
                     // color:'#fff',
                 });
             }
-
-            // opt.musicChanged(index);
         };
 
         musicValue._playIndex = function(index){
-            musicValue._showMusicLoading('music_play_index');
-
             //通过data-index+1来播放下一集
             var index = index;
             if(index >= musicLenth){
@@ -427,10 +418,7 @@
             if(_this.audio[0].readyState === 3){
                 opt.afterMusicLoading();
                 //删除加载浮层
-                $dw.removeLoading('music_waiting');
-                $dw.removeLoading('music_play_index');
-                $dw.removeLoading('music_play_next');
-                $dw.removeLoading('music_play_index');
+                DW.removeLoading('music_waiting');
             }
 
             //注册点击事件
@@ -507,12 +495,30 @@
             }
         };
 
+        musicValue.getRandomElementFromArr = function(arr,num){
+            var test_arr = new Array();
+            for(var index in arr){
+                test_arr.push(arr[index]);    //创建新的arr  为了不改变原来的arr值
+            };
+
+            var result_arr = new Array();
+            for(var i = 0;i < num; i++) {
+                if(test_arr.length>0){
+                    var index = Math.floor(Math.random() * test_arr.length);
+                    result_arr.push(test_arr[index]);
+                    test_arr.splice(index,1);
+                }else{
+                    return;
+                }
+            }
+            return result_arr;
+        }
+
         //选择获取数据类型  本地 or ajax
         musicValue._dataType = function(text){
             var value = text || '';
             if(opt.hasAjax){
                 musicValue._ajax(value);
-                // data = $DW.getStorage('music_info') == 'null'? {}:$DW.getStorage('music_info');          //数据为空时   使用本地静态数据
                 // parseData = JSON.parse(data);
             }else{
                 // parseData = opt.source;
@@ -526,9 +532,9 @@
             musicValue._getMusicInfo();
         };
 
-        musicValue._showMusicList = function() {
+        // musicValue._showMusicList = function() {
 
-        };
+        // };
 
         //执行ajax请求的数据
         musicValue._ajax = function(value){
@@ -536,15 +542,14 @@
             var host = window.location.host;
             var music_data = '';
             $.ajax({
-                url:"server.php?inAjax=1&do=getMusic",
+                url:"../../music/server.php?inAjax=1&do=getMusic",
                 type:'post',
                 datatype:'json',
                 data:{type:value},
                 success:function(data){
-                    musicData = JSON.parse(data);
-                    // alert(musicData);
+                    musicData = data;
+                    // alert(data);
                     musicValue._getMusicInfo();
-                    // $DW.setStorage('music_info',data);
                 },
 
                 error:function(XMLHttpRequest, textStatus, errorThrown) {
@@ -624,5 +629,163 @@
         return _this;
     }
 
-    window.$api = DW;
+    $.fn.loading = function(options){
+        var $this = $(this);
+        var _this = this;
+        return this.each(function(){
+            var loadingPosition ='';
+            var defaultProp = {
+                direction:              'column',                                               //方向，column纵向   row 横向
+                animateStyle:           'fadeInNoTransform',                                    //进入类型
+                title:                  '请稍等...',                                           //显示什么内容
+                name:                   'loadingName',                                          //loading的data-name的属性值  用于删除loading需要的参数
+                type:                   'origin',                                               //pic   origin  
+                discription:            '这是一个描述',                                       //loading的描述
+                titleColor:             'rgba(255,255,255,0.7)',                                //title文本颜色
+                discColor:              'rgba(255,255,255,0.7)',                                //disc文本颜色
+                loadingWidth:           260,                                                    //中间的背景宽度width
+                loadingBg:              'rgba(0, 0, 0, 0.6);',                                  //中间的背景色
+                borderRadius:           12,                                                     //中间的背景色的borderRadius
+                loadingMaskBg:          'transparent',                                          //背景遮罩层颜色
+                zIndex:                 1000001,                                                //层级
+
+                // 这是圆形旋转的loading样式    （originLoading）
+                originDivWidth:         60,                                                     //loadingDiv的width
+                originDivHeight:        60,                                                     //loadingDiv的Height
+
+                originWidth:            8,                                                      //小圆点width
+                originHeight:           8,                                                      //小圆点Height
+                originBg:               '#fefefe',                                              //小圆点背景色
+                smallLoading:           false,                                                  //显示小的loading
+
+                // 这是图片的样式   (pic)
+                imgSrc:                 'http://www.daiwei.org/index/images/logo/dw.png',       //默认的图片地址
+                imgDivWidth:            80,                                                     //imgDiv的width
+                imgDivHeight:           80,                                                     //imgDiv的Height
+
+                flexCenter:             false,                                                  //是否用flex布局让loading-div垂直水平居中
+                flexDirection:          'row',                                                  //row column  flex的方向   横向 和 纵向             
+                mustRelative:           false,                                                  //$this是否规定relative
+            };
+
+
+            var opt = $.extend(defaultProp,options || {});
+
+            if($this.selector == 'body'){
+                $('body,html').css({
+                    overflow:'hidden',
+                });
+                loadingPosition = 'fixed';
+            }else if(opt.mustRelative){
+                $this.css({
+                    position:'relative',
+                });
+                loadingPosition = 'absolute';
+            }else{
+                loadingPosition = 'absolute';
+            }
+
+            var _showOriginLoading = function(){
+                var smallLoadingMargin = opt.smallLoading ? 0 : '-10px';
+                if(opt.direction == 'row'){smallLoadingMargin='-6px'}
+
+                //悬浮层
+                _this.cpt_loading_mask = $('<div class="cpt-loading-mask animated '+opt.animateStyle+' '+opt.direction+'" data-name="'+opt.name+'"></div>').css({
+                    'background':opt.loadingMaskBg,
+                    'z-index':opt.zIndex,
+                    'position':loadingPosition,
+                }).appendTo($this);
+
+                //中间的显示层
+                _this.div_loading = $('<div class="div-loading"></div>').css({
+                    'background':opt.loadingBg,
+                    'width':opt.loadingWidth,
+                    'height':opt.loadingHeight,
+                    '-webkit-border-radius':opt.borderRadius,
+                    '-moz-border-radius':opt.borderRadius,
+                    'border-radius':opt.borderRadius,
+                }).appendTo(_this.cpt_loading_mask);
+
+                if(opt.flexCenter){
+                    _this.div_loading.css({
+                        "display": "-webkit-flex",
+                        "display": "flex",
+                        "-webkit-flex-direction":opt.flexDirection,
+                        "flex-direction":opt.flexDirection,
+                        "-webkit-align-items": "center",
+                        "align-items": "center",
+                        "-webkit-justify-content": "center",
+                        "justify-content":"center",
+                    });
+                }
+
+                //loading标题
+                _this.loading_title = $('<p class="loading-title txt-textOneRow"></p>').css({
+                    color:opt.titleColor,
+                }).html(opt.title).appendTo(_this.div_loading);
+
+                //loading中间的内容  可以是图片或者转动的小圆球
+                _this.loading = $('<div class="loading '+opt.type+'"></div>').css({
+                    'width':opt.originDivWidth,
+                    'height':opt.originDivHeight,
+                }).appendTo(_this.div_loading);
+
+                //描述
+                _this.loading_discription = $('<p class="loading-discription txt-textOneRow"></p>').css({
+                    color:opt.discColor,
+                }).html(opt.discription).appendTo(_this.div_loading);
+
+                if(opt.type == 'origin'){
+                    _this.loadingOrigin = $('<div class="div-loadingOrigin"><span></span></div><div class="div-loadingOrigin"><span></span></div><div class="div_loadingOrigin"><span></span></div><div class="div_loadingOrigin"><span></span></div><div class="div_loadingOrigin"><span></span></div>').appendTo(_this.loading);
+                    _this.loadingOrigin.children().css({
+                        "margin-top":smallLoadingMargin,
+                        "margin-left":smallLoadingMargin,
+                        "width":opt.originWidth,
+                        "height":opt.originHeight,
+                        "background":opt.originBg,
+                    });
+                }   
+
+                if(opt.type == 'pic'){
+                    _this.loadingPic = $('<img src="'+opt.imgSrc+'" alt="loading" />').appendTo(_this.loading);
+                }         
+
+
+                //关闭事件冒泡  和默认的事件
+                _this.cpt_loading_mask.on('touchstart touchend touchmove click',function(e){
+                    e.stopPropagation();
+                    e.preventDefault();
+                });
+            };
+
+            function createLoading(){
+                //不能生成两个loading data-name 一样的loading
+                if($(".cpt-loading-mask[data-name="+opt.name+"]").length > 0){
+                    // console.error('loading mask cant has same date-name('+opt.name+'), you cant set "date-name" prop when you create it');
+                    return
+                }
+                
+                _showOriginLoading();
+            };
+
+            createLoading();
+        });
+    }
+
+    //关闭Loading
+    DW.removeLoading = function(loadingName){
+        var loadingName = loadingName || '';
+        $('body,html').css({
+            overflow:'auto',
+        });
+
+        if(loadingName == ''){
+            $(".cpt-loading-mask").remove();
+        }else{
+            var name = loadingName || 'loadingName';
+            $(".cpt-loading-mask[data-name="+name+"]").remove();        
+        }
+    }
+
+    window.MC = DW;
 })(jQuery,window)

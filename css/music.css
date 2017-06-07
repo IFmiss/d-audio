@@ -67,7 +67,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 13, ../sass/music.scss */
+/* line 14, ../sass/music.scss */
 .music-div {
   position: fixed;
   right: 20px;
@@ -95,7 +95,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border: 0;
   outline: 0;
 }
-/* line 31, ../sass/music.scss */
+/* line 32, ../sass/music.scss */
 .music-div .filterBg {
   position: absolute;
   width: 100%;
@@ -114,11 +114,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-transition-delay: 0.1s;
   transition: all 0.5s ease 0.1s;
 }
-/* line 46, ../sass/music.scss */
+/* line 47, ../sass/music.scss */
 .music-div:hover {
   will-change: transform;
 }
-/* line 50, ../sass/music.scss */
+/* line 51, ../sass/music.scss */
 .music-div .music-play-div {
   width: 100%;
   height: 100%;
@@ -127,7 +127,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-align-items: center;
   align-items: center;
 }
-/* line 56, ../sass/music.scss */
+/* line 57, ../sass/music.scss */
 .music-div .music-play-div .pauseplay {
   width: 42px;
   height: 42px;
@@ -150,21 +150,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-flex: 0 0 42px;
   flex: 0 0 42px;
 }
-/* line 69, ../sass/music.scss */
+/* line 70, ../sass/music.scss */
 .music-div .music-play-div .pauseplay:active {
   background: rgba(7, 17, 27, 0.4);
 }
-/* line 73, ../sass/music.scss */
+/* line 74, ../sass/music.scss */
 .music-div .music-play-div .pauseplay i {
   font-size: 22px;
   display: block;
   color: rgba(244, 244, 244, 0.56);
 }
-/* line 79, ../sass/music.scss */
+/* line 80, ../sass/music.scss */
 .music-div .music-play-div .pauseplay i.fa-play {
   padding-left: 4px;
 }
-/* line 85, ../sass/music.scss */
+/* line 86, ../sass/music.scss */
 .music-div .music-play-div .next {
   width: 32px;
   height: 32px;
@@ -187,17 +187,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-/* line 99, ../sass/music.scss */
+/* line 100, ../sass/music.scss */
 .music-div .music-play-div .next:active {
   background: rgba(7, 17, 27, 0.4);
 }
-/* line 103, ../sass/music.scss */
+/* line 104, ../sass/music.scss */
 .music-div .music-play-div .next i {
   color: rgba(244, 244, 244, 0.56);
   display: block;
   font-size: 14px;
 }
-/* line 111, ../sass/music.scss */
+/* line 112, ../sass/music.scss */
 .music-div .music-play-div .music-info {
   display: -webkit-flex;
   display: flex;
@@ -213,7 +213,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   overflow: hidden;
   height: 35px;
 }
-/* line 121, ../sass/music.scss */
+/* line 122, ../sass/music.scss */
 .music-div .music-play-div .music-info p {
   display: block;
   text-align: center;
@@ -226,7 +226,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-family: 'Microsoft YaHei';
   line-height: initial;
 }
-/* line 129, ../sass/music.scss */
+/* line 130, ../sass/music.scss */
 .music-div .music-play-div .music-info p.music-name {
   flex: 1;
   color: #fff;
@@ -236,7 +236,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-user-select: none;
   user-select: none;
 }
-/* line 136, ../sass/music.scss */
+/* line 137, ../sass/music.scss */
 .music-div .music-play-div .music-info p.music-singer {
   flex: 1;
   color: #eee;
@@ -246,7 +246,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-user-select: none;
   user-select: none;
 }
-/* line 146, ../sass/music.scss */
+/* line 147, ../sass/music.scss */
 .music-div .music-typeSelect {
   position: absolute;
   width: 100%;
@@ -260,7 +260,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   left: 0;
   color: #fff;
 }
-/* line 157, ../sass/music.scss */
+/* line 158, ../sass/music.scss */
 .music-div .music-typeSelect div {
   -webkit-flex: 1;
   flex: 1;
@@ -280,7 +280,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 14px;
   cursor: pointer;
 }
-/* line 168, ../sass/music.scss */
+/* line 169, ../sass/music.scss */
 .music-div .music-typeSelect div:not(:last-child):after {
   content: '';
   height: 60%;
@@ -293,18 +293,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-transform: translate3d(0, -50%, 0);
   transform: translate3d(0, -50%, 0);
 }
-/* line 179, ../sass/music.scss */
+/* line 180, ../sass/music.scss */
 .music-div .music-typeSelect div:active {
   background: rgba(255, 255, 255, 0.1);
 }
-/* line 185, ../sass/music.scss */
+/* line 186, ../sass/music.scss */
 .music-div .music-div-logo {
   width: auto;
   height: auto;
   position: relative;
   display: none;
 }
-/* line 191, ../sass/music.scss */
+/* line 192, ../sass/music.scss */
 .music-div .music-div-logo .music-logo {
   width: 58px;
   height: 58px;
@@ -318,7 +318,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
-/* line 198, ../sass/music.scss */
+/* line 199, ../sass/music.scss */
 .music-div .music-div-logo .music-logo.active {
   -moz-animation-play-state: running;
   -webkit-animation-play-state: running;
@@ -357,7 +357,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transform: rotate(360deg);
   }
 }
-/* line 247, ../sass/music.scss */
+/* line 248, ../sass/music.scss */
 .music-div.circle {
   padding: 0;
   height: 58px !important;
@@ -366,11 +366,569 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-/* line 254, ../sass/music.scss */
+/* line 255, ../sass/music.scss */
 .music-div.circle .music-play-div {
   display: none;
 }
-/* line 258, ../sass/music.scss */
+/* line 259, ../sass/music.scss */
 .music-div.circle .music-div-logo {
   display: block;
+}
+
+/* line 267, ../sass/music.scss */
+.cpt-loading-mask * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 271, ../sass/music.scss */
+.cpt-loading-mask.column {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: transparent;
+  z-index: 100;
+  -moz-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+/* line 284, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  background: rgba(0, 0, 0, 0.6);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  padding: 16px;
+}
+/* line 295, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  margin: 0 auto;
+}
+/* line 303, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.origin div {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  -moz-animation: load 2.28s linear infinite;
+  -webkit-animation: load 2.28s linear infinite;
+  animation: load 2.28s linear infinite;
+}
+/* line 312, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.origin div span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FBC9B9;
+  position: absolute;
+  left: 50%;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+/* line 325, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.origin div:nth-child(1) {
+  -moz-animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+/* line 328, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.origin div:nth-child(2) {
+  -moz-animation-delay: 0.4s;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+/* line 331, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.origin div:nth-child(3) {
+  -moz-animation-delay: 0.6s;
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+/* line 334, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.origin div:nth-child(4) {
+  -moz-animation-delay: 0.8s;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+/* line 337, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.origin div:nth-child(5) {
+  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+/* line 343, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.pic {
+  width: 80px;
+  height: 80px;
+}
+/* line 347, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.pic img {
+  width: 100%;
+  height: 100%;
+}
+/* line 354, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading-title {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/* line 364, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading-discription {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  margin-top: 20px;
+}
+/* line 375, ../sass/music.scss */
+.cpt-loading-mask.row {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: transparent;
+  z-index: 100;
+  -moz-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+/* line 388, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  background: rgba(0, 0, 0, 0.6);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  padding: 15px;
+}
+/* line 403, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  float: left;
+}
+/* line 412, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.origin div {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  -moz-animation: load 2.28s linear infinite;
+  -webkit-animation: load 2.28s linear infinite;
+  animation: load 2.28s linear infinite;
+}
+/* line 421, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.origin div span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FBC9B9;
+  position: absolute;
+  left: 50%;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+/* line 434, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.origin div:nth-child(1) {
+  -moz-animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+/* line 437, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.origin div:nth-child(2) {
+  -moz-animation-delay: 0.4s;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+/* line 440, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.origin div:nth-child(3) {
+  -moz-animation-delay: 0.6s;
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+/* line 443, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.origin div:nth-child(4) {
+  -moz-animation-delay: 0.8s;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+/* line 446, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.origin div:nth-child(5) {
+  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+/* line 452, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.pic {
+  width: 80px;
+  height: 80px;
+}
+/* line 456, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.pic img {
+  width: 100%;
+  height: 100%;
+}
+/* line 463, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading-title {
+  width: 72%;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  padding: 2px 0;
+  padding-left: 20px;
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/* line 475, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading-discription {
+  display: none;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+@-webkit-keyframes fadeInNoTransform {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInNoTransform {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* line 500, ../sass/music.scss */
+.fadeInNoTransform {
+  -webkit-animation-name: fadeInNoTransform;
+  animation-name: fadeInNoTransform;
+}
+
+@-webkit-keyframes fadeOutNoTransform {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOutNoTransform {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* line 513, ../sass/music.scss */
+.fadeOutNoTransform {
+  -webkit-animation-name: fadeOutNoTransform;
+  animation-name: fadeOutNoTransform;
+}
+
+@-webkit-keyframes load {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  10% {
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    -moz-transform: rotate(160deg);
+    -ms-transform: rotate(160deg);
+    -webkit-transform: rotate(160deg);
+    transform: rotate(160deg);
+  }
+  62% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+  65% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -moz-transform: rotate(200deg);
+    -ms-transform: rotate(200deg);
+    -webkit-transform: rotate(200deg);
+    transform: rotate(200deg);
+  }
+  90% {
+    -moz-transform: rotate(340deg);
+    -ms-transform: rotate(340deg);
+    -webkit-transform: rotate(340deg);
+    transform: rotate(340deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes load {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  10% {
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    -moz-transform: rotate(160deg);
+    -ms-transform: rotate(160deg);
+    -webkit-transform: rotate(160deg);
+    transform: rotate(160deg);
+  }
+  62% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+  65% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -moz-transform: rotate(200deg);
+    -ms-transform: rotate(200deg);
+    -webkit-transform: rotate(200deg);
+    transform: rotate(200deg);
+  }
+  90% {
+    -moz-transform: rotate(340deg);
+    -ms-transform: rotate(340deg);
+    -webkit-transform: rotate(340deg);
+    transform: rotate(340deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-ms-keyframes load {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  10% {
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    -moz-transform: rotate(160deg);
+    -ms-transform: rotate(160deg);
+    -webkit-transform: rotate(160deg);
+    transform: rotate(160deg);
+  }
+  62% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+  65% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -moz-transform: rotate(200deg);
+    -ms-transform: rotate(200deg);
+    -webkit-transform: rotate(200deg);
+    transform: rotate(200deg);
+  }
+  90% {
+    -moz-transform: rotate(340deg);
+    -ms-transform: rotate(340deg);
+    -webkit-transform: rotate(340deg);
+    transform: rotate(340deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes load {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  10% {
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    -moz-transform: rotate(160deg);
+    -ms-transform: rotate(160deg);
+    -webkit-transform: rotate(160deg);
+    transform: rotate(160deg);
+  }
+  62% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+  65% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -moz-transform: rotate(200deg);
+    -ms-transform: rotate(200deg);
+    -webkit-transform: rotate(200deg);
+    transform: rotate(200deg);
+  }
+  90% {
+    -moz-transform: rotate(340deg);
+    -ms-transform: rotate(340deg);
+    -webkit-transform: rotate(340deg);
+    transform: rotate(340deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  10% {
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    -moz-transform: rotate(160deg);
+    -ms-transform: rotate(160deg);
+    -webkit-transform: rotate(160deg);
+    transform: rotate(160deg);
+  }
+  62% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+  65% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -moz-transform: rotate(200deg);
+    -ms-transform: rotate(200deg);
+    -webkit-transform: rotate(200deg);
+    transform: rotate(200deg);
+  }
+  90% {
+    -moz-transform: rotate(340deg);
+    -ms-transform: rotate(340deg);
+    -webkit-transform: rotate(340deg);
+    transform: rotate(340deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
