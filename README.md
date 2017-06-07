@@ -2,6 +2,8 @@
 [![](https://img.shields.io/badge/musicJs-demo-brightgreen.svg)](http://www.daiwei.org/components/music) ![](https://img.shields.io/badge/version-2.0-blue.svg) ![](https://img.shields.io/badge/IE-10%2B-orange.svg)<br>
 简洁的音乐播放器插件
 
+![](https://github.com/IFmiss/music/blob/master/img/TlPtuyzEtc.gif)
+
 ### 插件参数
 
 * width：music宽度 <br>
