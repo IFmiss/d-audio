@@ -1,5 +1,5 @@
 # music
-[![](https://img.shields.io/badge/demo-music-green.svg)](http://www.daiwei.org/components/music)<br>
+[![](https://img.shields.io/badge/musicJs-demo-green.svg)](http://www.daiwei.org/components/music) ![](https://img.shields.io/badge/version-2.0-brightgreen.svg)<br>
 简洁的音乐播放器插件
 
 ### 插件参数
