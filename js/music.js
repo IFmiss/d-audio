@@ -297,10 +297,11 @@
                 DW.removeLoading('music_waiting');
             });
 
-            // var dw_audio = document.getElementById('cpt_dw_music');
-            // dw_audio.addEventListener('canplay',function(){
-            //     musicValue._showLoading(dw_audio);
-            // });
+            //实时显示canvas进度
+            var dw_audio = document.getElementById('cpt_dw_music');
+            dw_audio.addEventListener('canplay',function(){
+                musicValue._showLoading(dw_audio);
+            });
         };
 
         //音频需要加载之后才播放事件
