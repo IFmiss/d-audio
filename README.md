@@ -47,5 +47,5 @@
 为了方便 我把我自己写的loading插件和music.js放在一起 
 MC  可以在music.js倒数第二行更改你想要的名称
 
-插件演示地址: http://www.daiwei.org/components/music
+插件演示地址: http://www.daiwei.org/components/music <br>
 插件扩展演示地址: http://www.daiwei.org/music
