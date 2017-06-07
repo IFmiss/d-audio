@@ -1,5 +1,5 @@
 # music
-[![](https://img.shields.io/badge/musicJs-demo-brightgreen.svg)](http://www.daiwei.org/components/music) ![](https://img.shields.io/badge/version-2.0-brightgreen.svg)<br>
+[![](https://img.shields.io/badge/musicJs-demo-brightgreen.svg)](http://www.daiwei.org/components/music) ![](https://img.shields.io/badge/version-2.0-brightgreen.svg) [![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star)](https://github.com/IFmiss/music/)<br>
 简洁的音乐播放器插件
 
 ### 插件参数
