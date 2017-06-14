@@ -1,5 +1,9 @@
 # music
 [![](https://img.shields.io/badge/musicJs-demo-brightgreen.svg)](http://www.daiwei.org/components/music) ![](https://img.shields.io/badge/version-2.0-blue.svg) ![](https://img.shields.io/badge/IE-10%2B-orange.svg)<br>
+
+插件演示地址: http://www.daiwei.org/components/music <br>
+插件扩展演示地址: http://www.daiwei.org/music
+
 简洁的音乐播放器插件
 
 ![](https://github.com/IFmiss/music/blob/master/img/TlPtuyzEtc.gif)
@@ -48,6 +52,3 @@
 
 为了方便 我把我自己写的loading插件和music.js放在一起 
 MC  可以在music.js倒数第二行更改你想要的名称
-
-插件演示地址: http://www.daiwei.org/components/music <br>
-插件扩展演示地址: http://www.daiwei.org/music
