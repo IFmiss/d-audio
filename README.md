@@ -8,6 +8,24 @@
 
 ![](https://github.com/IFmiss/music/blob/master/img/TlPtuyzEtc.gif)
 
+
+基于插件的扩展页面
+主题:纯背景色
+
+![纯背景色](https://github.com/IFmiss/music/blob/master/img/m1.jpg)
+
+主题:犬夜叉
+
+![犬夜叉](https://github.com/IFmiss/music/blob/master/img/m2.jpg)
+
+加入Webaudio的音频显示
+
+![加入Webaudio的音频显示](https://github.com/IFmiss/music/blob/master/img/m3.jpg)
+
+以及线上音乐的播放(酷我音乐API)
+
+![以及线上音乐的播放(酷我音乐API)](https://github.com/IFmiss/music/blob/master/img/qFpVviMBrh.gif)
+
 ### 插件参数
 
 * width：music宽度 <br>
