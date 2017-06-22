@@ -18,6 +18,7 @@
 	width: 240px;
 	height: 56px;
 	padding: 0 10px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	@include user-select(none);
 	@include border-radius(10px);
 	@include transition(all .3s ease);
