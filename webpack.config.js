@@ -9,6 +9,10 @@ const extractSass = new ExtractTextPlugin({
     disable: process.env.NODE_ENV === "development"
 });
 
+const resolve = function (dir) {
+	return path.resolve(__dirname, dir);
+}
+
 module.exports = {
 	entry: './src/index.js',
 	output: {
@@ -77,5 +81,14 @@ module.exports = {
 		noInfo: true,
 		// 配置端口号
 		overlay: true,
-	}
+	},
+	resolve: {
+		alias: {
+			'src': resolve('src'),
+			'commonjs': resolve('src/commonjs'),
+			'scss': resolve('src/scss'),
+			'stylus': resolve('src/stylus'),
+			'static': resolve('static'),
+		}
+	},
 };

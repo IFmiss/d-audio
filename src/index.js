@@ -1,4 +1,4 @@
 import './a.css'
 import './b.scss'
 import './c.styl'
-import './font-icon/style.css'
+import 'static/font-icon/style.css'
