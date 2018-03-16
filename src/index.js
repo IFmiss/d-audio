@@ -1,4 +1,2 @@
-import './a.css'
-import './b.scss'
-import './c.styl'
-import './font-icon/style.css'
+import './a.scss'
+import 'static/font-icon/style.css'

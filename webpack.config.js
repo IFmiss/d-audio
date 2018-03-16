@@ -9,6 +9,10 @@ const extractSass = new ExtractTextPlugin({
     disable: process.env.NODE_ENV === "development"
 });
 
+const resolve = function (dir) {
+	return path.resolve(__dirname, dir);
+}
+
 module.exports = {
 	entry: './src/index.js',
 	output: {
@@ -72,10 +76,20 @@ module.exports = {
 		// 当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html。通过传入以下启用：
 		contentBase: "./",
 		// 端口号
-		port: 1994,
+		port: 1000,
 		//当有编译器错误或警告时，在浏览器中显示全屏覆盖。默认禁用。如果您只想显示编译器错误：
 		noInfo: true,
 		// 配置端口号
 		overlay: true,
+	},
+	resolve: {
+		alias: {
+			'src': resolve('src'),
+			'commonjs': resolve('src/commonjs'),
+			'scss': resolve('src/scss'),
+			'stylus': resolve('src/stylus'),
+			'script': resolve('src/script'),
+			'static': resolve('static'),
+		}
 	}
 };

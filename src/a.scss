@@ -1,0 +1,26 @@
+@import '~scss/common/_index.scss';
+body,html{
+	margin: 0;
+	padding: 0;
+	height:100%;
+	background: #111010;
+}
+body{
+	// background: red;
+	@include display-flex;
+	width: 100%;
+	height: 100%;
+	@include align-items(center);
+	@include justify-content(center);
+	@include flex-direction(column);
+	.title{
+		font-size: 42px;
+		@include colortext-l(#B32FC3, #D1A22F)
+		@include inline-block;
+		margin-top: 0;
+	}
+	.disc{
+		font-size: 14px;
+		color: #f1f1f1;
+	}
+}
