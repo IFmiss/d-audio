@@ -16,8 +16,10 @@
   "author": "daiwei",
   "license": "ISC",
   "devDependencies": {
+    "c-video": "^1.0.7",
     "compass-mixins": "^0.12.10",
     "css-loader": "^0.28.10",
+    "d-video": "^1.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.0.6",
     "node-sass": "^4.7.2",
