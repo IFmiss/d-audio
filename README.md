@@ -6,3 +6,4 @@
 配置通用的scss,引入compass-mixin
 引入基本的js代码，后期会渐渐加入更多内容
 
+![](https://github.com/IFmiss/webpack-tpl/blob/master/static/demo.png)
