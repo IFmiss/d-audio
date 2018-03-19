@@ -1,13 +1,34 @@
+//移动端通用样式  1rem 相当于100px算的  也就是  宽度 / 7.5的比例
+@function px75rem($px){
+	$rem : 100px;
+	@return ($px * 1px / $rem) + rem;
+}
+
 // 多少行限制超出省略
-@mixin lineclamp($height, $count) {
-	height: $height;
-	line-height: $height / $count;
+@mixin lineclamp($height, $count, $isrem: false) {
+	@if($isrem == false) {
+		height: px75rem($height);
+		line-height: px75rem($height / $count);
+	} @else {
+		height: $height;
+		line-height: $height / $count;
+	}
 	overflow:hidden;
 	text-overflow:ellipsis;
-	display:-webkit-box; 
+	display:-webkit-box;
 	-webkit-box-orient:vertical;
 	-webkit-line-clamp: $count;
 	word-wrap: break-word;
+}
+
+@mixin textoneline ($height: auto) {
+	height: $height;
+	@if($height == auto) {
+		line-height: initial;
+	} else {
+		line-height:$height;
+	}
+	@include ellipsis();
 }
 
 
@@ -149,8 +170,3 @@
    	background-image: url($url + "." + $type)
 }
 
-//移动端通用样式  1rem 相当于100px算的  也就是  宽度 / 7.5的比例
-@function px75rem($px){
-	$rem : 100px;
-	@return ($px * 1px / $rem) + rem;
-}

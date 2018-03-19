@@ -1,4 +1,4 @@
-export const Storage = {
+export const storage = {
 	// 设置Cookie
 	// name: 为cookie的名字
 	// value: 为对应的值
@@ -51,6 +51,57 @@ export const Storage = {
 			for (let k in getAllCookies) {
 				document.cookie = `${getAllCookies[k].name}=${getAllCookies[k].value};expires=${date.toGMTString()}`
 			}
+		}
+	},
+
+	// 本地存储
+	// 是否支持本地存储
+	isLStorage () {
+		return window.localStorage ? true : false
+	},
+
+	// 是否有对应的本地存储内容
+	hasLStorage () {
+		if(this.isLStorage) {
+			return !(window.localStorage.getItem(storage_name) === null)
+		} else {
+			return false
+		}
+	},
+
+	// 设置本地存储
+	setLStorage (key, value) {
+		if (this.lStorage) {
+			window.localStorage.setItem(key, value)
+		} else {
+			return false
+		}
+	},
+
+	// 获取本地存储
+	getLStorage (key) {
+		if (this.lStorage) {
+			return window.localStorage.getItem(key)
+		} else {
+			return false
+		}
+	},
+
+	// 清除单个本地存储
+	rmLStorage (key) {
+		if (this.lStorage) {
+			window.localStorage.removeItem(key)
+		} else {
+			return false
+		}
+	},
+
+	// 清除所有本地存储
+	clearLStorage () {
+		if (this.lStorage) {
+			window.localStorage.clear()
+		} else {
+			return false
 		}
 	}
 }

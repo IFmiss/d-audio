@@ -27,6 +27,14 @@
 	}
 }
 
+.border-box{
+	@include box-sizing(border-box);
+}
+
+.content-wrap{
+	@include box-sizing(content-wrap);
+}
+
 .block_area{
 	margin: 0 auto;
 	position: relative;
@@ -48,6 +56,18 @@
 
 .text-bold{
 	font-weight:bold;
+}
+
+.activeB{
+	display: block;
+}
+
+.activeF{
+	display: flex;
+}
+
+.activeN{
+	display:none;
 }
 
 
@@ -95,5 +115,58 @@
 
 	.border-r-#{$i}{
 		@include border-radius($i * 1px)
+	}
+
+	.m-padding-top-#{$i}{
+		padding-top: px75rem($i);
+	}
+	.m-padding-left-#{$i}{
+		padding-left: px75rem($i);
+	}
+	.m-padding-right-#{$i}{
+		padding-right: px75rem($i);
+	}
+	.m-padding-bottom-#{$i}{
+		padding-bottom: px75rem($i);
+	}
+	.m-padding-#{$i}{
+		padding: px75rem($i);
+	}
+
+	//--------------------
+
+	.m-margin-top-#{$i}{
+		margin-top: px75rem($i);
+	}
+	.m-margin-left-#{$i}{
+		margin-left: px75rem($i);
+	}
+	.m-margin-right-#{$i}{
+		margin-right: px75rem($i);
+	}
+	.m-margin-bottom-#{$i}{
+		margin-bottom: px75rem($i);
+	}
+	.m-margin-#{$i}{
+		padding: px75rem($i);
+	}
+
+
+	// -------------------
+
+	.m-text-indent-#{$i}{
+		text-indent: px75rem($i);
+	}
+
+	.m-border-r-#{$i}{
+		@include border-radius(px75rem($i))
+	}
+}
+
+@for $i from 10 through 50 {
+	@if ($i % 2 == 0) {
+		.m-size-#{$i}{
+			font-size: px75rem($i);
+		}
 	}
 }
