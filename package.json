@@ -16,6 +16,7 @@
   "author": "daiwei",
   "license": "ISC",
   "devDependencies": {
+    "better-scroll": "^1.8.4",
     "c-video": "^1.0.7",
     "compass-mixins": "^0.12.10",
     "css-loader": "^0.28.10",
