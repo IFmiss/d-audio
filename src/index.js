@@ -21,4 +21,20 @@ import 'static/font-icon/style.css'
 
 
 import {utils} from 'commonjs/utils.js';
-alert(utils.dataType.isNumber(1))
+import {dom} from 'commonjs/dom.js';
+// alert(utils.dataType.isNumber(1))
+
+// console.log(utils.deviceVersion ())
+// dom.addCss('http://www.daiwei.org/global.css');
+
+// console.log(utils.getRandomEleFromArr([1,3,4,5,6,222,3312,1,2,3,4,1,4,22123,41], 25))
+// console.log(dom.getScrollWidth())
+utils.notification().then((res) => {
+	alert('你点击了我')
+}, (err) => {
+	alert('不支持哦')
+})
+
+console.log(utils.randomColor(0.2))
+
+utils.showLayoutFramework()

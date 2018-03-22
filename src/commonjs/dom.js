@@ -45,5 +45,37 @@ export const dom = {
 		} else {
 			el.getAttribute(dataname)
 		}
+	},
+
+	// 在页面中插入一个css的样式
+	// url 样式文件的地址
+	addCss (url) {
+		let linkElm = document.createElement('link');
+		linkElm.setAttribute('rel', 'stylesheet');
+		linkElm.setAttribute('type', 'text/css');
+		linkElm.setAttribute('href', url);
+		document.head.appendChild(linkElm);
+	},
+
+	// 在页面中插入一个js的样式
+	// src 为js的地址
+	addJs (src) {
+		let script = document.createElement("script");
+		script.type = "text/script";
+		script.src = src;
+		document.getElementsByTagName("html")[0].appendChild(script);
+	},
+
+	// 获取滚动条的宽度
+	getScrollWidth () {
+	let noScroll,   //没有scroll时候的 clientWidth
+		scroll,     //有scroll时候的 clientWidth
+		oDiv = document.createElement('div');    //创建一个div  之后再删除
+		oDiv.style.cssText = 'position:absolute; top:-1000px; width:100px; height:100px; overflow:hidden;';
+		noScroll = document.body.appendChild(oDiv).clientWidth;
+		oDiv.style.overflowY = 'scroll';
+		scroll = oDiv.clientWidth;
+		document.body.removeChild(oDiv);
+		return noScroll - scroll; 
 	}
 }
