@@ -18,3 +18,7 @@ import 'static/font-icon/style.css'
 // scroll.on('scroll', (pos) => {
 // 	// console.log(pos)
 // })
+
+
+import {utils} from 'commonjs/utils.js';
+alert(utils.dataType.isNumber(1))

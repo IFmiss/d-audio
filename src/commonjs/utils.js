@@ -57,7 +57,7 @@ export const utils = {
         if (!document.addEventListener) return;
         window.addEventListener(_self.resizeEvt,_self.changePage,false);
         document.addEventListener('DOMContentLoaded', _self.changePage, false);
-	}
+	},
 
 	// 数据存储本地  相当于下载一个文件  该文件是需要存储的数据   的方法
 	// name 相对路径的文件名称   如 ./test.txt
@@ -79,5 +79,33 @@ export const utils = {
 		save_link.href = urlObject.createObjectURL(export_blob)
 		save_link.download = name
 		fake_click(save_link)
+	},
+
+	// 判断数据类型格式
+	initType () {
+		this.dataType = {}
+		let type = (o) => {
+			let s = Object.prototype.toString.call(o);
+			return s.match(/\[object (.*?)\]/)[1].toLowerCase();
+		}
+
+		const _self = this;
+		['Null',
+		'Undefined',
+		'Object',
+		'Array',
+		'String',
+		'Number',
+		'Boolean',
+		'Function',
+		'RegExp'
+		].forEach(function (t) {
+				_self.dataType['is' + t] = function (o) {
+				return type(o) === t.toLowerCase();
+			};
+		});
 	}
 }
+
+// 初始化判断数据类型格式
+utils.initType()
