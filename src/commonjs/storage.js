@@ -103,5 +103,27 @@ export const storage = {
 		} else {
 			return false
 		}
-	}
+	},
+
+	// 数据存储本地  相当于下载一个文件  该文件是需要存储的数据   的方法
+	// name 相对路径的文件名称   如 ./test.txt
+	// data 要存储的数据
+ 	saveDataAsFile (name, data) {
+		let fake_click = (obj) => {  
+		    let ev = document.createEvent("MouseEvents")
+		    ev.initMouseEvent(  
+		        "click", true, false, window, 0, 0, 0, 0, 0  
+		        , false, false, false, false, 0, null  
+		        )
+		    obj.dispatchEvent(ev)
+		}
+
+		let urlObject = window.URL || window.webkitURL || window
+		let export_blob = new Blob([data])
+		let save_link = document.createElementNS("http://www.w3.org/1999/xhtml", "a")
+
+		save_link.href = urlObject.createObjectURL(export_blob)
+		save_link.download = name
+		fake_click(save_link)
+	},
 }

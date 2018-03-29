@@ -67,27 +67,6 @@ export const utils = {
         document.addEventListener('DOMContentLoaded', _self.changePage, false);
 	},
 
-	// 数据存储本地  相当于下载一个文件  该文件是需要存储的数据   的方法
-	// name 相对路径的文件名称   如 ./test.txt
-	// data 要存储的数据
- 	saveDataAsFile (name, data) {
-		let fake_click = (obj) => {  
-		    let ev = document.createEvent("MouseEvents")
-		    ev.initMouseEvent(  
-		        "click", true, false, window, 0, 0, 0, 0, 0  
-		        , false, false, false, false, 0, null  
-		        )
-		    obj.dispatchEvent(ev)
-		}
-
-		let urlObject = window.URL || window.webkitURL || window
-		let export_blob = new Blob([data])
-		let save_link = document.createElementNS("http://www.w3.org/1999/xhtml", "a")
-
-		save_link.href = urlObject.createObjectURL(export_blob)
-		save_link.download = name
-		fake_click(save_link)
-	},
 
 	// 判断数据类型格式
 	initType () {
@@ -111,16 +90,6 @@ export const utils = {
 				_self.dataType['is' + t] = function (o) {
 				return type(o) === t.toLowerCase();
 			};
-		});
-	},
-
-	// 图片加载的一个promise  path 是图片的地址
-	preloadImage (path) {
-		return new Promise((resolve, reject) => {
-			let image = new Image();
-			image.onload  = resolve;
-			image.onerror = reject;
-			image.src = path;
 		});
 	},
 
@@ -157,7 +126,7 @@ export const utils = {
 		return new Promise((resolve, reject) => {
 			if(window.Notification && Notification.permission !== "denied") {
 				Notification.requestPermission(function(status) {
-					var n = new Notification( newOpt.title, {
+					let n = new Notification( newOpt.title, {
 						body: newOpt.body,
 						icon: newOpt.icon,
 					}); 
@@ -186,9 +155,29 @@ export const utils = {
 		return `rgba(${r},${g},${b},${opacity})`
 	},
 
-	//outline 提现布局框架   by  Addy Osmani
+	// outline 提现布局框架   by  Addy Osmani
 	showLayoutFramework() {
 		[].forEach.call( document.querySelectorAll("*"),function(a){  a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16) }); 
+	},
+
+	// 返回浏览器url的参数 返回一个对象
+	getUrlParam (url) {
+		let _arr = url.search.slice(1).split('&')
+		let _obj = {}
+		for (let i = 0; i < _arr.length; i++) {
+			_obj[_arr[i].split('=')[0]] = _arr[i].split('=')[1]
+		}
+		return _obj
+	},
+
+	// 返回一个字符串的长度，汉字算2个字符长度
+	strLength (str) {
+		let a = 0;
+		for (let i = 0; i < str.length; i++ ) {
+			let count = str.charCodeAt(i) > 255 ? 2 : 1
+			a += count
+		}
+		return a;
 	}
 }
 

@@ -38,3 +38,5 @@ utils.notification().then((res) => {
 console.log(utils.randomColor(0.2))
 
 utils.showLayoutFramework()
+
+console.log(utils.strLength('nihao啊啊啊啊啊'))

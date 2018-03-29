@@ -14,9 +14,12 @@ const resolve = function (dir) {
 }
 
 module.exports = {
-	entry: './src/index.js',
+	entry: {
+		index: './src/index.js',
+		about: './src/pages/about/about.js'
+	},
 	output: {
-	path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(__dirname, 'dist'),
 		publicPath: '',
 		filename: '[name]-[hash].js'
 	},
@@ -80,6 +83,12 @@ module.exports = {
 			template: 'index.html',
 			inject: true
 		}),
+		new HtmlWebpackPlugin ({
+			path: path.resolve(__dirname, 'dist'),
+			filename: 'about.html',
+			template: './src/pages/about/about.html',
+			inject: true
+		}),
 		extractSass
 	],
 	devServer: {
@@ -101,5 +110,26 @@ module.exports = {
 			'script': resolve('src/script'),
 			'static': resolve('static'),
 		}
+	},
+	optimization: {
+		splitChunks: {
+			chunks: "all",
+			minSize: 30000,
+			minChunks: 3,
+			maxAsyncRequests: 5,
+			maxInitialRequests: 3,
+			name: true,
+			cacheGroups: {
+				default: {
+					minChunks: 2,
+					priority: -20,
+					reuseExistingChunk: true,
+				},
+				vendors: {
+					test: /[\\/]node_modules[\\/]/,
+					priority: -10
+				}
+			}
+		}
 	}
-};
+}
