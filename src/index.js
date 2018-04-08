@@ -29,14 +29,33 @@ import {dom} from 'commonjs/dom.js';
 
 // console.log(utils.getRandomEleFromArr([1,3,4,5,6,222,3312,1,2,3,4,1,4,22123,41], 25))
 // console.log(dom.getScrollWidth())
-utils.notification().then((res) => {
-	alert('你点击了我')
-}, (err) => {
-	alert('不支持哦')
-})
 
-console.log(utils.randomColor(0.2))
+// utils.notification().then((res) => {
+// 	alert('你点击了我')
+// }, (err) => {
+// 	alert('不支持哦')
+// })
 
-utils.showLayoutFramework()
+// console.log(utils.randomColor(0.2))
 
-console.log(utils.strLength('nihao啊啊啊啊啊'))
+// utils.showLayoutFramework()
+
+// console.log(utils.strLength('nihao啊啊啊啊啊'))
+
+console.log(utils.extendDeep(
+	{
+		a:{
+			c: 1,
+			d: 2
+		},
+		b:[2,3,4,5,6]
+	},
+	{
+		b:[2,33,422,111],
+		a:{
+			e: 3,
+			c: 11111,
+			d: 2222
+		}
+	}
+))

@@ -1,5 +1,6 @@
 // 浏览器相关方法
 export const utils = {
+	// 设备信息
 	deviceVersion () {
 		const u = navigator.userAgent
 		const app = navigator.appVersion
@@ -178,6 +179,21 @@ export const utils = {
 			a += count
 		}
 		return a;
+	},
+
+	// extendDeep  深拷贝
+	extendDeep (newinfo, options) {
+		const _self = this
+        for (var k in options) {
+            if (options.hasOwnProperty(k)) {
+                if (typeof options[k] === 'object') {
+                    _self.extendDeep(newinfo[k], options[k])
+                } else {
+                    newinfo[k] = options[k];
+                }
+            }
+        }
+        return newinfo;
 	}
 }
 
