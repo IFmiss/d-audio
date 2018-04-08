@@ -1,4 +1,7 @@
 # music
+
+QQ交流群： 424418160
+
 [![](https://img.shields.io/badge/musicJs-demo-brightgreen.svg)](http://www.daiwei.org/components/music) ![](https://img.shields.io/badge/version-2.0-blue.svg) ![](https://img.shields.io/badge/IE-10%2B-orange.svg)<br>
 
 插件演示地址: http://www.daiwei.org/components/music <br>
