@@ -149,8 +149,6 @@
 // fixed布局铺面全屏
 @mixin fixedfull() {
 	position: fixed;
-	height: 100%;
-	width:100%;
 	right: 0;
 	top: 0;
 	left: 0;
