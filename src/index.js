@@ -1,4 +1,4 @@
-import './a.scss'
+import './style.scss'
 import 'static/font-icon/style.css'
 // import './test_scroll.scss'
 // import Bscroll from 'better-scroll'
