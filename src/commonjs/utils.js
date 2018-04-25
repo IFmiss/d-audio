@@ -47,25 +47,26 @@ export const utils = {
 
 	// 移动端rem的设计
 	initRem () {
-        let _self = {};
+        let _self = {}
         let _pdfwidth = 750
         let _minScreenWidth = 320
-        let _maxScreenWidth = 768
+        let _maxScreenWidth = 515
         let _minScreenWidthP = _minScreenWidth / _pdfwidth
         let _maxScreenWidthP = _maxScreenWidth / _pdfwidth
-        _self.resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
-        _self.Html = document.getElementsByTagName("html")[0];
-        _self.widthProportion = function(){
-            let p = Number((document.body&&document.body.clientWidth || _self.Html.offsetWidth) / _pdfwidth).toFixed(3);
-            return p > _maxScreenWidthP ? _maxScreenWidthP:p<0.426?0.426:p;
-        };
-        _self.changePage = function(){
-            _self.Html.setAttribute("style","font-size:" + _self.widthProportion() * 100 + "px");
-        };
-        _self.changePage();
-        if (!document.addEventListener) return;
-        window.addEventListener(_self.resizeEvt,_self.changePage,false);
-        document.addEventListener('DOMContentLoaded', _self.changePage, false);
+        _self.resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize'
+        _self.Html = document.getElementsByTagName('html')[0]
+        _self.widthProportion = function () {
+            let p = Number(((document.body && document.body.clientWidth) || _self.Html.offsetWidth) / _pdfwidth).toFixed(4)
+            let betterInfo = (p > _maxScreenWidthP ? 0.6867 : p) < _minScreenWidthP ? 0.4267 : p
+            return betterInfo
+        }
+        _self.changePage = function () {
+			_self.Html.setAttribute('style', 'font-size:' + _self.widthProportion() * 100 + 'px')
+        }
+        _self.changePage()
+        if (!document.addEventListener) return
+        window.addEventListener(_self.resizeEvt, _self.changePage, false)
+        document.addEventListener('DOMContentLoaded', _self.changePage, false)
 	},
 
 
