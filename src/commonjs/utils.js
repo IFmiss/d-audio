@@ -57,7 +57,7 @@ export const utils = {
         _self.Html = document.getElementsByTagName('html')[0]
         _self.widthProportion = function () {
             let p = Number(((document.body && document.body.clientWidth) || _self.Html.offsetWidth) / _pdfwidth).toFixed(4)
-            let betterInfo = (p > _maxScreenWidthP ? 0.6867 : p) < _minScreenWidthP ? 0.4267 : p
+            let betterInfo = (p = p > _maxScreenWidthP ? 0.6867 : p) < _minScreenWidthP ? 0.4267 : p
             return betterInfo
         }
         _self.changePage = function () {
