@@ -1,0 +1,935 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 14, ../sass/music.scss */
+.music-div {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 240px;
+  height: 56px;
+  padding: 0 10px;
+  -webkit-tap-highlight-color: transparent;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -moz-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  overflow: hidden;
+  z-index: 999;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+}
+/* line 33, ../sass/music.scss */
+.music-div .filterBg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  filter: blur(8px);
+  background: url("http://www.daiwei.org/index/images/img/indeximg3.jpg") no-repeat;
+  background-position: center right;
+  background-size: cover;
+  z-index: -1;
+  overflow: hidden;
+  -moz-transition: all 0.5s ease 0.1s;
+  -o-transition: all 0.5s ease 0.1s;
+  -webkit-transition: all 0.5s ease;
+  -webkit-transition-delay: 0.1s;
+  transition: all 0.5s ease 0.1s;
+}
+/* line 48, ../sass/music.scss */
+.music-div:hover {
+  will-change: transform;
+}
+/* line 52, ../sass/music.scss */
+.music-div .music-play-div {
+  width: 100%;
+  height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+/* line 58, ../sass/music.scss */
+.music-div .music-play-div .pauseplay {
+  width: 42px;
+  height: 42px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: rgba(7, 17, 27, 0.3);
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex: 0 0 42px;
+  flex: 0 0 42px;
+}
+/* line 71, ../sass/music.scss */
+.music-div .music-play-div .pauseplay:active {
+  background: rgba(7, 17, 27, 0.4);
+}
+/* line 75, ../sass/music.scss */
+.music-div .music-play-div .pauseplay i {
+  font-size: 22px;
+  display: block;
+  color: rgba(244, 244, 244, 0.56);
+}
+/* line 81, ../sass/music.scss */
+.music-div .music-play-div .pauseplay i.fa-play {
+  padding-left: 4px;
+}
+/* line 87, ../sass/music.scss */
+.music-div .music-play-div .next {
+  width: 32px;
+  height: 32px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: rgba(7, 17, 27, 0.3);
+  cursor: pointer;
+  margin-left: 10px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex: 0 0 32px;
+  flex: 0 0 32px;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/* line 101, ../sass/music.scss */
+.music-div .music-play-div .next:active {
+  background: rgba(7, 17, 27, 0.4);
+}
+/* line 105, ../sass/music.scss */
+.music-div .music-play-div .next i {
+  color: rgba(244, 244, 244, 0.56);
+  display: block;
+  font-size: 14px;
+}
+/* line 113, ../sass/music.scss */
+.music-div .music-play-div .music-info {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin-left: 10px;
+  overflow: hidden;
+  height: 35px;
+}
+/* line 123, ../sass/music.scss */
+.music-div .music-play-div .music-info p {
+  display: block;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  font-family: 'Microsoft YaHei';
+  line-height: initial;
+}
+/* line 131, ../sass/music.scss */
+.music-div .music-play-div .music-info p.music-name {
+  flex: 1;
+  color: #fff;
+  font-size: 14px;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+/* line 138, ../sass/music.scss */
+.music-div .music-play-div .music-info p.music-singer {
+  flex: 1;
+  color: #eee;
+  font-size: 12px;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+/* line 148, ../sass/music.scss */
+.music-div .music-typeSelect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  color: #fff;
+}
+/* line 159, ../sass/music.scss */
+.music-div .music-typeSelect div {
+  -webkit-flex: 1;
+  flex: 1;
+  height: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  position: relative;
+  font-size: 14px;
+  cursor: pointer;
+}
+/* line 170, ../sass/music.scss */
+.music-div .music-typeSelect div:not(:last-child):after {
+  content: '';
+  height: 60%;
+  position: absolute;
+  right: 0px;
+  width: 1px;
+  background: rgba(230, 230, 230, 0.4);
+  top: 50%;
+  -moz-transform: translate3d(0, -50%, 0);
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+}
+/* line 181, ../sass/music.scss */
+.music-div .music-typeSelect div:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+/* line 187, ../sass/music.scss */
+.music-div .music-div-logo {
+  width: auto;
+  height: auto;
+  position: relative;
+  display: none;
+}
+/* line 193, ../sass/music.scss */
+.music-div .music-div-logo .music-logo {
+  width: 58px;
+  height: 58px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-animation: rotateMusicLogo 8s linear infinite;
+  -webkit-animation: rotateMusicLogo 8s linear infinite;
+  animation: rotateMusicLogo 8s linear infinite;
+  -moz-animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+/* line 200, ../sass/music.scss */
+.music-div .music-div-logo .music-logo.active {
+  -moz-animation-play-state: running;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+@keyframes rotateMusicLogo {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotateMusicLogo {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotateMusicLogo {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* line 249, ../sass/music.scss */
+.music-div.circle {
+  padding: 0;
+  height: 58px !important;
+  width: 58px !important;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 256, ../sass/music.scss */
+.music-div.circle .music-play-div {
+  display: none;
+}
+/* line 260, ../sass/music.scss */
+.music-div.circle .music-div-logo {
+  display: block;
+}
+
+/* line 268, ../sass/music.scss */
+.cpt-loading-mask * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 272, ../sass/music.scss */
+.cpt-loading-mask.column {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: transparent;
+  z-index: 100;
+  -moz-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+/* line 285, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  background: rgba(0, 0, 0, 0.6);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  padding: 16px;
+}
+/* line 296, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  margin: 0 auto;
+}
+/* line 304, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.origin div {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  -moz-animation: load 2.28s linear infinite;
+  -webkit-animation: load 2.28s linear infinite;
+  animation: load 2.28s linear infinite;
+}
+/* line 313, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.origin div span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FBC9B9;
+  position: absolute;
+  left: 50%;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+/* line 326, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.origin div:nth-child(1) {
+  -moz-animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+/* line 329, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.origin div:nth-child(2) {
+  -moz-animation-delay: 0.4s;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+/* line 332, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.origin div:nth-child(3) {
+  -moz-animation-delay: 0.6s;
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+/* line 335, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.origin div:nth-child(4) {
+  -moz-animation-delay: 0.8s;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+/* line 338, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.origin div:nth-child(5) {
+  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+/* line 344, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.pic {
+  width: 80px;
+  height: 80px;
+}
+/* line 348, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading.pic img {
+  width: 100%;
+  height: 100%;
+}
+/* line 355, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading-title {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/* line 365, ../sass/music.scss */
+.cpt-loading-mask.column .div-loading .loading-discription {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  margin-top: 20px;
+}
+/* line 376, ../sass/music.scss */
+.cpt-loading-mask.row {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: transparent;
+  z-index: 100;
+  -moz-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+/* line 389, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  background: rgba(0, 0, 0, 0.6);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  padding: 15px;
+}
+/* line 404, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  float: left;
+}
+/* line 413, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.origin div {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  -moz-animation: load 2.28s linear infinite;
+  -webkit-animation: load 2.28s linear infinite;
+  animation: load 2.28s linear infinite;
+}
+/* line 422, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.origin div span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FBC9B9;
+  position: absolute;
+  left: 50%;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+/* line 435, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.origin div:nth-child(1) {
+  -moz-animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+/* line 438, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.origin div:nth-child(2) {
+  -moz-animation-delay: 0.4s;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+/* line 441, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.origin div:nth-child(3) {
+  -moz-animation-delay: 0.6s;
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+/* line 444, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.origin div:nth-child(4) {
+  -moz-animation-delay: 0.8s;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+/* line 447, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.origin div:nth-child(5) {
+  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+/* line 453, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.pic {
+  width: 80px;
+  height: 80px;
+}
+/* line 457, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading.pic img {
+  width: 100%;
+  height: 100%;
+}
+/* line 464, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading-title {
+  width: 72%;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  padding: 2px 0;
+  padding-left: 20px;
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/* line 476, ../sass/music.scss */
+.cpt-loading-mask.row .div-loading .loading-discription {
+  display: none;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+@-webkit-keyframes fadeInNoTransform {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInNoTransform {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* line 501, ../sass/music.scss */
+.fadeInNoTransform {
+  -webkit-animation-name: fadeInNoTransform;
+  animation-name: fadeInNoTransform;
+}
+
+@-webkit-keyframes fadeOutNoTransform {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOutNoTransform {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* line 514, ../sass/music.scss */
+.fadeOutNoTransform {
+  -webkit-animation-name: fadeOutNoTransform;
+  animation-name: fadeOutNoTransform;
+}
+
+@-webkit-keyframes load {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  10% {
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    -moz-transform: rotate(160deg);
+    -ms-transform: rotate(160deg);
+    -webkit-transform: rotate(160deg);
+    transform: rotate(160deg);
+  }
+  62% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+  65% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -moz-transform: rotate(200deg);
+    -ms-transform: rotate(200deg);
+    -webkit-transform: rotate(200deg);
+    transform: rotate(200deg);
+  }
+  90% {
+    -moz-transform: rotate(340deg);
+    -ms-transform: rotate(340deg);
+    -webkit-transform: rotate(340deg);
+    transform: rotate(340deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes load {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  10% {
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    -moz-transform: rotate(160deg);
+    -ms-transform: rotate(160deg);
+    -webkit-transform: rotate(160deg);
+    transform: rotate(160deg);
+  }
+  62% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+  65% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -moz-transform: rotate(200deg);
+    -ms-transform: rotate(200deg);
+    -webkit-transform: rotate(200deg);
+    transform: rotate(200deg);
+  }
+  90% {
+    -moz-transform: rotate(340deg);
+    -ms-transform: rotate(340deg);
+    -webkit-transform: rotate(340deg);
+    transform: rotate(340deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-ms-keyframes load {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  10% {
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    -moz-transform: rotate(160deg);
+    -ms-transform: rotate(160deg);
+    -webkit-transform: rotate(160deg);
+    transform: rotate(160deg);
+  }
+  62% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+  65% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -moz-transform: rotate(200deg);
+    -ms-transform: rotate(200deg);
+    -webkit-transform: rotate(200deg);
+    transform: rotate(200deg);
+  }
+  90% {
+    -moz-transform: rotate(340deg);
+    -ms-transform: rotate(340deg);
+    -webkit-transform: rotate(340deg);
+    transform: rotate(340deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes load {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  10% {
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    -moz-transform: rotate(160deg);
+    -ms-transform: rotate(160deg);
+    -webkit-transform: rotate(160deg);
+    transform: rotate(160deg);
+  }
+  62% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+  65% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -moz-transform: rotate(200deg);
+    -ms-transform: rotate(200deg);
+    -webkit-transform: rotate(200deg);
+    transform: rotate(200deg);
+  }
+  90% {
+    -moz-transform: rotate(340deg);
+    -ms-transform: rotate(340deg);
+    -webkit-transform: rotate(340deg);
+    transform: rotate(340deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  10% {
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  50% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    -moz-transform: rotate(160deg);
+    -ms-transform: rotate(160deg);
+    -webkit-transform: rotate(160deg);
+    transform: rotate(160deg);
+  }
+  62% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+  65% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -moz-transform: rotate(200deg);
+    -ms-transform: rotate(200deg);
+    -webkit-transform: rotate(200deg);
+    transform: rotate(200deg);
+  }
+  90% {
+    -moz-transform: rotate(340deg);
+    -ms-transform: rotate(340deg);
+    -webkit-transform: rotate(340deg);
+    transform: rotate(340deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
