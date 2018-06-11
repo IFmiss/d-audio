@@ -1,61 +1,49 @@
 import './style.scss'
 import 'static/font-icon/style.css'
-// import './test_scroll.scss'
-// import Bscroll from 'better-scroll'
-// // alert(Bscroll);
-// let test_scroll = document.querySelector('.test_scroll');
-// let scroll = new Bscroll(test_scroll,{
-//     scrollY: true,
-//     click: true,
-//     pullUpLoad: true,
-//     pullDownRefresh: true
+
+import dAudio from './lib/d-audio.js'
+
+import axios from 'axios'
+axios.get('http://www.daiwei.org/vue/server/music.php?inAjax=1&do=playlist&id=2179377798').then((res) => {
+	console.log(res.data)
+	let music = res.data.playlist.tracks
+	let index = 0
+	axios.get('http://www.daiwei.org/vue/server/music.php?inAjax=1&do=musicInfo&id=' + music[0].id).then((res) => {
+		const d = new dAudio ({
+			ele: '#d-audio',
+			src: res.data.data[0].url,
+			imageurl: music[0].al.picUrl,
+			name: music[0].ar[0].name,
+			singer: music[0].name,
+			next: function () {
+				index++
+				if (index > music.length - 1) index = 0
+				axios.get('http://www.daiwei.org/vue/server/music.php?inAjax=1&do=musicInfo&id=' + music[index].id).then((res) => {
+					const info = {
+						src: res.data.data[0].url,
+						imageurl: music[index].al.picUrl,
+						name: music[index].ar[0].name,
+						singer: music[index].name
+					}
+					d.checkAudio(info.src, info.imageurl, info.name, info.singer)
+				}, (err) => {
+					console.log(err)
+				})
+			}
+		})
+	})
+}, (err) => {
+	console.log(err)
+})
+
+// const d = new dAudio ({
+// 	next: function () {
+// 		const info = {
+// 			src: 'http://oiq8j9er1.bkt.clouddn.com/%E6%9E%97%E4%BF%8A%E6%9D%B0%20-%20%E4%B8%80%E7%9C%BC%E4%B8%87%E5%B9%B41.mp3',
+// 			imageurl: 'http://oiq8j9er1.bkt.clouddn.com/music_%E6%88%91%E8%BF%98%E6%83%B3%E5%A5%B9.jpg',
+// 			name: '一眼万年',
+// 			singer: '林俊杰'	
+// 		}
+// 		d.checkAudio(info.src, info.imageurl, info.name, info.singer)
+// 	}
 // })
-
-// scroll.on('pullingDown', () => {
-// 	console.log(1)
-// })
-
-// scroll.on('scroll', (pos) => {
-// 	// console.log(pos)
-// })
-
-
-import {utils} from 'commonjs/utils.js';
-import {dom} from 'commonjs/dom.js';
-// alert(utils.dataType.isNumber(1))
-
-// console.log(utils.deviceVersion ())
-// dom.addCss('http://www.daiwei.org/global.css');
-
-// console.log(utils.getRandomEleFromArr([1,3,4,5,6,222,3312,1,2,3,4,1,4,22123,41], 25))
-// console.log(dom.getScrollWidth())
-
-// utils.notification().then((res) => {
-// 	alert('你点击了我')
-// }, (err) => {
-// 	alert('不支持哦')
-// })
-
-// console.log(utils.randomColor(0.2))
-
-// utils.showLayoutFramework()
-
-// console.log(utils.strLength('nihao啊啊啊啊啊'))
-
-console.log(utils.extendDeep(
-	{
-		a:{
-			c: 1,
-			d: 2
-		},
-		b:[2,3,4,5,6]
-	},
-	{
-		b:[2,33,422,111],
-		a:{
-			e: 3,
-			c: 11111,
-			d: 2222
-		}
-	}
-))

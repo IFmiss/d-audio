@@ -15,7 +15,7 @@ body{
 	@include flex-direction(column);
 	.title{
 		font-size: 42px;
-		@include colortext-l(#B32FC3, #D1A22F)
+		@include colortext-l(rgb(47, 190, 195), rgb(112, 209, 47));
 		@include inline-block;
 		margin-top: 0;
 	}

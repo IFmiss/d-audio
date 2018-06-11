@@ -1,9 +1,10 @@
 {
-  "name": "webpack-tpl",
+  "name": "d-audio",
   "version": "1.0.0",
-  "description": "webpack-tpl",
-  "main": "webpack.config.js",
+  "description": "d-audio",
+  "main": "./src/lib/d-audio.js",
   "dependencies": {
+    "axios": "^0.18.0",
     "hoek": "^5.0.3",
     "wx-audio": "^1.0.0"
   },
@@ -13,8 +14,14 @@
     "dev": "webpack-dev-server --mode development --progress --colors",
     "watch": "webpack --progress --colors --watch"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/ifmiss/d-audio.js"
+  },
   "keywords": [
-    "webpack"
+    "audio",
+    "d-audio",
+    "music"
   ],
   "author": "daiwei",
   "license": "ISC",

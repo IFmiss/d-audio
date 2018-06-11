@@ -15,11 +15,11 @@ const resolve = function (dir) {
 
 module.exports = {
 	entry: {
-		index: './src/index.js',
-		about: './src/pages/about/about.js'
+		index: './src/index.js'
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
+		// publicPath: 'http://www.daiwei.org/components/d-audio/',
 		publicPath: '',
 		filename: '[name]-[hash].js'
 	},
@@ -43,12 +43,6 @@ module.exports = {
 						{
 							loader: 'sass-loader'
 						}
-						// {
-			   //            loader: 'sass-resources-loader',
-			   //            options: {
-			   //              resources: path.resolve(__dirname, 'src/scss/base.scss')
-			   //            }
-			   //          }
 					]
 				})
 			},
@@ -94,12 +88,6 @@ module.exports = {
 		new HtmlWebpackPlugin ({
 			filename: 'index.html',
 			template: 'index.html',
-			inject: true
-		}),
-		new HtmlWebpackPlugin ({
-			path: path.resolve(__dirname, 'dist'),
-			filename: 'about.html',
-			template: './src/pages/about/about.html',
 			inject: true
 		}),
 		extractSass

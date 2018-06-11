@@ -1,0 +1,123 @@
+{
+  "IcoMoonType": "selection",
+  "icons": [
+    {
+      "icon": {
+        "paths": [
+          "M812.032 935.68v-423.68l-741.888 423.68v-847.36l741.888 423.68v-423.68h105.984v847.36h-105.984z"
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "next"
+        ],
+        "defaultCode": 59788,
+        "grid": 0,
+        "attrs": []
+      },
+      "attrs": [],
+      "properties": {
+        "id": 141,
+        "order": 6,
+        "ligatures": "",
+        "prevSize": 32,
+        "code": 59788,
+        "name": "next"
+      },
+      "setIdx": 0,
+      "setId": 2,
+      "iconIdx": 140
+    },
+    {
+      "icon": {
+        "paths": [
+          "M349.867 149.333h-14.933c-21.333 0-36.267 14.933-36.267 34.133v654.933c0 19.2 14.933 34.133 34.133 34.133h14.933c19.2 0 34.133-14.933 34.133-34.133v-654.933c2.133-19.2-12.8-34.133-32-34.133zM691.2 149.333h-14.933c-21.333 0-36.267 14.933-36.267 34.133v654.933c0 19.2 14.933 34.133 34.133 34.133h14.933c19.2 0 34.133-14.933 34.133-34.133v-654.933c2.133-19.2-12.8-34.133-32-34.133z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 16,
+        "tags": [
+          "播放暂停"
+        ]
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 5,
+        "id": 493,
+        "name": "play",
+        "prevSize": 32,
+        "code": 59648
+      },
+      "setIdx": 1,
+      "setId": 1,
+      "iconIdx": 0
+    },
+    {
+      "icon": {
+        "paths": [
+          "M780.8 475.733l-494.933-307.2c-27.733-17.067-64 4.267-64 36.267v614.4c0 32 36.267 53.333 64 36.267l492.8-307.2c29.867-14.933 29.867-57.6 2.133-72.533z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 16,
+        "tags": [
+          "播放"
+        ]
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 7,
+        "id": 492,
+        "name": "pause",
+        "prevSize": 32,
+        "code": 59649
+      },
+      "setIdx": 1,
+      "setId": 1,
+      "iconIdx": 1
+    }
+  ],
+  "height": 1024,
+  "metadata": {
+    "name": "icomoon"
+  },
+  "preferences": {
+    "showGlyphs": true,
+    "showQuickUse": true,
+    "showQuickUse2": true,
+    "showSVGs": true,
+    "fontPref": {
+      "prefix": "icon-",
+      "metadata": {
+        "fontFamily": "icomoon"
+      },
+      "metrics": {
+        "emSize": 1024,
+        "baseline": 6.25,
+        "whitespace": 50
+      },
+      "embed": false
+    },
+    "imagePref": {
+      "prefix": "icon-",
+      "png": true,
+      "useClassSelector": true,
+      "color": 0,
+      "bgColor": 16777215,
+      "classSelector": ".icon"
+    },
+    "historySize": 50,
+    "showCodes": true,
+    "gridSize": 16
+  }
+}
