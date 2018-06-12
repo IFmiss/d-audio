@@ -26,7 +26,7 @@
   })
 </pre>
 
-***参数
+### 参数
 <pre>
   // 音乐append的元素
   ele: '#d-audio',
