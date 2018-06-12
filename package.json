@@ -2,7 +2,7 @@
   "name": "d-audio",
   "version": "1.0.0",
   "description": "d-audio",
-  "main": "./src/lib/d-audio.js",
+  "main": "webpack.config.js",
   "dependencies": {
     "axios": "^0.18.0",
     "hoek": "^5.0.3",

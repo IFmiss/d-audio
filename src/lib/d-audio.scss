@@ -48,6 +48,7 @@
   @include border-radius(8px);
   @include user-select(none);
   @include translate3d(0,0,0);
+  font-family: Arial, Helvetica, sans-serif;
   &.cricle{
     min-width: 50px;
     min-height: 50px;
