@@ -13,17 +13,18 @@ axios.get('http://www.daiwei.org/vue/server/music.php?inAjax=1&do=playlist&id=21
 			ele: '#d-audio',
 			src: res.data.data[0].url,
 			imageurl: music[0].al.picUrl,
-			name: music[0].ar[0].name,
-			singer: music[0].name,
+			name: music[0].name,
+			singer: music[0].ar[0].name,
 			next: function () {
 				index++
 				if (index > music.length - 1) index = 0
 				axios.get('http://www.daiwei.org/vue/server/music.php?inAjax=1&do=musicInfo&id=' + music[index].id).then((res) => {
+					console.log(music[index].ar[0].name)
 					const info = {
 						src: res.data.data[0].url,
 						imageurl: music[index].al.picUrl,
-						name: music[index].ar[0].name,
-						singer: music[index].name
+						name: music[index].name,
+						singer: music[index].ar[0].name
 					}
 					d.checkAudio(info.src, info.imageurl, info.name, info.singer)
 				}, (err) => {
