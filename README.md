@@ -11,9 +11,9 @@
 
 ### 食用方法
 安装：
-<pre>
+```js
   npm install d-audio
-</pre>
+```
 
 引入
 
@@ -30,27 +30,62 @@ const d = new dAudio ({
 })
 ```
 
+es5安装：
+如果不再es6环境下的代码，可以引入该项目根目录的lib文件夹下，引入js和css即可
+
+```html
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://daiwei.org/components/d-audio/lib/d-audio.css">
+    <title>d-audio</title>
+  </head>
+  <body>
+    <div class="d-audio" style="width: 300px;"></div>
+  </body>
+  <script src="http://daiwei.org/components/d-audio/lib/d-audio.js"></script>
+  <script>
+    var myAudio = new Daudio({
+      ele: '.d-audio',
+      ...
+    })
+  </script>
+  </html>
+```
+
 ### 参数
 
 ```js
 // 音乐append的元素
 ele: '#d-audio',
+
 // 音乐封面
 imageurl: 'http://www.daiwei.org/sunmmer.jpg',
+
 // 音乐地址
 src: '',
+
 // 音乐名字
 name: '',
+
 // 音乐歌手
 singer: '',
+
 // 是否显示进度信息
 showprogress: true,
+
 // '' 就是默认状态， cricle则是初始化就是圆形且可以旋转
 initstate: '',
+
 // 是否循环
 loop: false,
+
 // 音乐播放结束事件，可设置播放下一首音乐
 ended: () => {},
+
 // 音乐下一曲的点击事件触发，需要配合checkAudio体现切歌的效果
 next: () => {}
 ```
