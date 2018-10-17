@@ -65,6 +65,8 @@ export default class Dmusic {
     d.audioContent = document.createElement('div')
     if (this.opt.initstate === 'cricle') {
       d.audioContent.className = 'audio-content ' + this.opt.initstate
+      // 这样才能形成一个圆
+      d.audioContent.style.width = this.height + 'px'
     } else {
       d.audioContent.className = 'audio-content'
     }
@@ -167,6 +169,8 @@ export default class Dmusic {
     }
     d.audioDetail.onclick = () => {
       dom.addClass(d.audioContent, 'cricle')
+      // 这样才能形成一个圆
+      d.audioContent.style.width = this.height + 'px'
     }
 
     // 点击播放暂停

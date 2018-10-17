@@ -15,6 +15,7 @@ axios.get('http://www.daiwei.org/vue/server/music.php?inAjax=1&do=playlist&id=21
 			imageurl: music[0].al.picUrl,
 			name: music[0].name,
 			singer: music[0].ar[0].name,
+			initstate: 'cricle', 
 			next: function () {
 				index++
 				if (index > music.length - 1) index = 0

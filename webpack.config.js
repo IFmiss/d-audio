@@ -19,9 +19,9 @@ module.exports = {
 		// index: './src/lib/d-audio.js'
 	},
 	output: {
-		path: path.resolve(__dirname, 'lib'),
-		// publicPath: 'http://www.daiwei.org/components/d-audio/',
-		publicPath: '',
+		path: path.resolve(__dirname, 'dist'),
+		publicPath: 'http://www.daiwei.org/components/d-audio/',
+		// publicPath: '',
 		filename: 'd-audio.js',
 		libraryTarget: 'var',
 		library: 'Daudio',

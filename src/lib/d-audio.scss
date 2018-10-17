@@ -41,11 +41,11 @@
   min-height: 50px;
   overflow: hidden;
   position: relative;
-  @include transition(all 0.5s);
+  @include transition(all 0.3s);
   -webkit-transform-origin: right center;
   -moz-transform-origin: right center;
   transform-origin: right center;
-  @include border-radius(8px);
+  @include border-radius(6px);
   @include user-select(none);
   @include translate3d(0,0,0);
   font-family: Arial, Helvetica, sans-serif;
