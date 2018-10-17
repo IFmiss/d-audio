@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const extractSass = new ExtractTextPlugin({
-    filename: "css/[name]-[contenthash].css",
+    filename: "d-audio.css",
     disable: process.env.NODE_ENV === "development"
 });
 
@@ -16,12 +16,16 @@ const resolve = function (dir) {
 module.exports = {
 	entry: {
 		index: './src/index.js'
+		// index: './src/lib/d-audio.js'
 	},
 	output: {
-		path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(__dirname, 'lib'),
 		// publicPath: 'http://www.daiwei.org/components/d-audio/',
 		publicPath: '',
-		filename: '[name]-[hash].js'
+		filename: 'd-audio.js',
+		libraryTarget: 'var',
+		library: 'Daudio',
+		libraryExport: 'default'
 	},
 	module: {
 		rules: [
