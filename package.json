@@ -5,8 +5,7 @@
   "main": "webpack.config.js",
   "dependencies": {
     "axios": "^0.18.0",
-    "hoek": "^5.0.3",
-    "wx-audio": "^1.0.0"
+    "hoek": "^5.0.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
