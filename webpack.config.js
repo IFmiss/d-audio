@@ -15,12 +15,12 @@ const resolve = function (dir) {
 
 module.exports = {
 	entry: {
-		index: './src/index.js'
-		// index: './src/lib/d-audio.js'
+		// index: './src/index.js'
+		index: './src/lib/d-audio.js'
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		// publicPath: 'http://www.daiwei.org/components/d-audio/',
+		publicPath: 'http://www.daiwei.org/components/d-audio/',
 		publicPath: '',
 		filename: 'd-audio.js',
 		libraryTarget: 'var',

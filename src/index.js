@@ -12,7 +12,7 @@ axios.get('http://www.daiwei.org/vue/server/music.php?inAjax=1&do=playlist&id=21
 		const d = new dAudio ({
 			ele: '#d-audio',
 			src: res.data.data[0].url,
-			imageurl: music[0].al.picUrl,
+			imageurl: music[0].al.picUrl + '?param=300y300',
 			name: music[0].name,
 			singer: music[0].ar[0].name,
 			initstate: 'cricle', 
@@ -23,7 +23,7 @@ axios.get('http://www.daiwei.org/vue/server/music.php?inAjax=1&do=playlist&id=21
 					console.log(music[index].ar[0].name)
 					const info = {
 						src: res.data.data[0].url,
-						imageurl: music[index].al.picUrl,
+						imageurl: music[index].al.picUrl + '?param=300y300',
 						name: music[index].name,
 						singer: music[index].ar[0].name
 					}
