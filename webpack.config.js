@@ -20,8 +20,8 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		publicPath: 'http://www.daiwei.org/components/d-audio/',
-		// publicPath: '',
+		// publicPath: 'http://www.daiwei.org/components/d-audio/',
+		publicPath: '',
 		filename: 'd-audio.js',
 		libraryTarget: 'var',
 		library: 'Daudio',

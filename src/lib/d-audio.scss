@@ -34,6 +34,48 @@
   }
 }
 
+// 添加blur模糊效果
+// 如果不是绝对定位，父元素需要设置相对定位
+// $blur 为模糊的数值
+// $height 区域的高度
+// $position 为位置 默认50%
+@mixin blur($blur, $height, $position: 50%, $scale: 1.5) {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: $position;
+	-webkit-filter: blur($blur);
+	filter: blur($blur);
+	-webkit-transform: scale($scale);
+	transform: scale($scale);
+	overflow: hidden;
+	&::before{
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+		background: rgba(0,0,0,0.1);
+		transition: all 0.3s;
+	}
+	@if ($height == auto) {
+		bottom: 0;
+	}
+	@else {
+		height: $height;
+	}
+	&.draken{
+		&::before{
+			background: rgba(0,0,0,0.3);
+		}
+	}
+}
+
 .audio-content{
   width: 100%;
   height: 100%;
@@ -199,7 +241,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    filter: blur(8px);
+    @include blur(10px, auto, center);
   }
   .audio-loading{
     position: absolute;
