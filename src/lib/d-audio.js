@@ -173,7 +173,6 @@ export default class Dmusic {
   initMusicColor (pic) {
     let d = this.dom
     let range = document.getElementsByClassName('d-audio-cricle-range')[0]
-    console.log(range)
     if (!this.opt.showprogress) return
     let color = {}
     // Vibrant
@@ -181,7 +180,7 @@ export default class Dmusic {
     .then((palette) => {
       // palette.DarkMuted
       color.l = `rgba(${palette.LightMuted.r}, ${palette.LightMuted.g}, ${palette.LightMuted.b}, 0.1)`
-      color.r = `rgba(${palette.LightMuted.r}, ${palette.LightMuted.g}, ${palette.LightMuted.b}, 0.6)`
+      color.r = `rgba(${palette.LightMuted.r}, ${palette.LightMuted.g}, ${palette.LightMuted.b}, 0.66)`
       color.range = `rgba(${palette.LightMuted.r}, ${palette.LightMuted.g}, ${palette.LightMuted.b}, 0.3)`
       range.style.border = `3px solid ${color.range}`
       d.audioProgress.style.background = `linear-gradient(to right, ${color.l} 30%, ${color.r})`

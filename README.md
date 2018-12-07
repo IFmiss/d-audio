@@ -7,7 +7,7 @@
 ![](https://github.com/IFmiss/music/blob/master/es5/img/TlPtuyzEtc.gif)
 
 ## 新版本d-audio上线
-
+- 新增进度条随封面背景变化而变化
 
 ### 食用方法
 安装：

@@ -36,15 +36,3 @@ axios.get('http://www.daiwei.org/vue/server/music.php?inAjax=1&do=playlist&id=21
 }, (err) => {
 	console.log(err)
 })
-
-// const d = new dAudio ({
-// 	next: function () {
-// 		const info = {
-// 			src: 'http://oiq8j9er1.bkt.clouddn.com/%E6%9E%97%E4%BF%8A%E6%9D%B0%20-%20%E4%B8%80%E7%9C%BC%E4%B8%87%E5%B9%B41.mp3',
-// 			imageurl: 'http://oiq8j9er1.bkt.clouddn.com/music_%E6%88%91%E8%BF%98%E6%83%B3%E5%A5%B9.jpg',
-// 			name: '一眼万年',
-// 			singer: '林俊杰'	
-// 		}
-// 		d.checkAudio(info.src, info.imageurl, info.name, info.singer)
-// 	}
-// })
