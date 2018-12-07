@@ -1,5 +1,6 @@
 import './d-audio.scss'
 import { dom } from './utils.js'
+import Vibrant from 'node-vibrant'
 export default class Dmusic {
   constructor (options) {
     let defaultOptions = {
@@ -81,6 +82,10 @@ export default class Dmusic {
     d.audioCricle.style.cssText = `width: ${this.height}px; height: ${this.height}px;`
     d.audioContent.appendChild(d.audioCricle)
 
+    // d-audio-cricle-range
+    d.audioCricleRange = document.createElement('div')
+    d.audioCricleRange.className = 'd-audio-cricle-range'
+    d.audioCricle.appendChild(d.audioCricleRange)
 
     // audio-detail
     d.audioDetail = document.createElement('div')
@@ -98,7 +103,7 @@ export default class Dmusic {
     // audio-bg
     d.audioBg = document.createElement('div')
     d.audioBg.className = 'audio-bg'
-    d.audioBg.style.cssText = `background: url("${this.opt.imageurl || this.defaultimg}");background-size: cover;background-position: center;`
+    d.audioBg.style.cssText = `background-image: url("${this.opt.imageurl || this.defaultimg}");background-size: cover;background-position: center;`
     d.audioContent.appendChild(d.audioBg)
 
     // audio-loading
@@ -147,6 +152,8 @@ export default class Dmusic {
     }
     d.audioContent.appendChild(d.audioEle)
 
+    this.initMusicColor(this.opt.imageurl || this.defaultimg)
+
     this.initDomInfo()
   }
 
@@ -157,6 +164,34 @@ export default class Dmusic {
     this.dom.next = document.getElementById('d-audio-next')
     this.dom.audioTitle = document.getElementById('d-audio-audioTitle')
     this.dom.audioSinger = document.getElementById('d-audio-audioSinger')
+  }
+
+  /**
+   * 获取图片的颜色以设置进度条的颜色以及圆环的颜色
+   * @param { string } 图片地址 
+   */
+  initMusicColor (pic) {
+    let d = this.dom
+    let range = document.getElementsByClassName('d-audio-cricle-range')[0]
+    console.log(range)
+    if (!this.opt.showprogress) return
+    let color = {}
+    // Vibrant
+    Vibrant.from(pic).getPalette()
+    .then((palette) => {
+      // palette.DarkMuted
+      color.l = `rgba(${palette.LightMuted.r}, ${palette.LightMuted.g}, ${palette.LightMuted.b}, 0.1)`
+      color.r = `rgba(${palette.LightMuted.r}, ${palette.LightMuted.g}, ${palette.LightMuted.b}, 0.6)`
+      color.range = `rgba(${palette.LightMuted.r}, ${palette.LightMuted.g}, ${palette.LightMuted.b}, 0.3)`
+      range.style.border = `3px solid ${color.range}`
+      d.audioProgress.style.background = `linear-gradient(to right, ${color.l} 30%, ${color.r})`
+    }, err => {
+      color.l = `rgba(255, 56, 56, 0.1)`
+      color.r = `rgba(255, 56, 56, 0.6)`
+      color.range = `rgba(255, 56, 56, 0.3)`
+      range.style.border = `3px solid ${color.range}`
+      d.audioProgress.style.background = `linear-gradient(to right, ${color.l} 30%, ${color.r})`
+    })
   }
 
   // 初始化事件
@@ -250,10 +285,13 @@ export default class Dmusic {
 
     d.audioEle.src = src
     d.cricleImage.src = imageurl
-    d.audioBg.style.cssText = `background: url("${imageurl}");background-size: cover;background-position: center;`
+    d.audioBg.style.cssText = `background-image: url("${imageurl}");background-size: cover;background-position: center;`
     d.audioTitle.innerText = name
     d.audioSinger.innerText = singer
     d.audioCricle.title = name + ' - ' + singer
+    // 初始化进度条颜色
+    this.initMusicColor(imageurl)
+    // 播放
     this.play()
   }
 

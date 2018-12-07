@@ -15,8 +15,8 @@ const resolve = function (dir) {
 
 module.exports = {
 	entry: {
-		// index: './src/index.js'
-		index: './src/lib/d-audio.js'
+		index: './src/index.js'
+		// index: './src/lib/d-audio.js'
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),

@@ -5,20 +5,19 @@ import dAudio from './lib/d-audio.js'
 
 import axios from 'axios'
 axios.get('http://www.daiwei.org/vue/server/music.php?inAjax=1&do=playlist&id=2179377798').then((res) => {
-	console.log(res.data)
 	let music = res.data.playlist.tracks
-	let index = 0
-	axios.get('http://www.daiwei.org/vue/server/music.php?inAjax=1&do=musicInfo&id=' + music[0].id).then((res) => {
+  let index = Math.floor(Math.random() * music.length)
+	axios.get('http://www.daiwei.org/vue/server/music.php?inAjax=1&do=musicInfo&id=' + music[index].id).then((res) => {
 		const d = new dAudio ({
 			ele: '#d-audio',
 			src: res.data.data[0].url,
-			imageurl: music[0].al.picUrl + '?param=300y300',
-			name: music[0].name,
-			singer: music[0].ar[0].name,
+			imageurl: music[index].al.picUrl + '?param=300y300',
+			name: music[index].name,
+      singer: music[index].ar[0].name,
+      height: '45px',
 			initstate: 'cricle', 
 			next: function () {
-				index++
-				if (index > music.length - 1) index = 0
+				index = Math.floor(Math.random() * music.length)
 				axios.get('http://www.daiwei.org/vue/server/music.php?inAjax=1&do=musicInfo&id=' + music[index].id).then((res) => {
 					console.log(music[index].ar[0].name)
 					const info = {
