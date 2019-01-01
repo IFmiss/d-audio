@@ -2,6 +2,11 @@
 
 插件演示地址: http://www.daiwei.org/components/d-audio <br>
 
+播放器接入hexo博客: http://www.daiwei.org/hexo-blog
+
+## 使用者:
+http://fm.zkbhj.com/#carousel-example-generic
+
 简洁的音乐播放器插件
 
 ![](https://github.com/IFmiss/music/blob/master/es5/img/TlPtuyzEtc.gif)
