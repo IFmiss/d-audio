@@ -14,6 +14,8 @@ http://fm.zkbhj.com/#carousel-example-generic
 ## 新版本d-audio上线
 - 新增进度条随封面背景变化而变化
 
+![](https://user-images.githubusercontent.com/17402583/52839950-b8cbca80-3132-11e9-8842-9ff64c4f26a9.png)
+
 ### 食用方法
 安装：
 ```js
