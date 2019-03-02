@@ -2,12 +2,19 @@
 
 插件演示地址: http://www.daiwei.org/components/d-audio <br>
 
+播放器接入hexo博客: http://www.daiwei.org/hexo-blog
+
+## 使用者:
+http://fm.zkbhj.com/#carousel-example-generic
+
 简洁的音乐播放器插件
 
 ![](https://github.com/IFmiss/music/blob/master/es5/img/TlPtuyzEtc.gif)
 
 ## 新版本d-audio上线
+- 新增进度条随封面背景变化而变化
 
+![](https://user-images.githubusercontent.com/17402583/52839950-b8cbca80-3132-11e9-8842-9ff64c4f26a9.png)
 
 ### 食用方法
 安装：
