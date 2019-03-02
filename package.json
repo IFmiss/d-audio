@@ -1,5 +1,5 @@
 {
-  "name": "d-audio",
+  "name": "@dw/d-audio",
   "version": "1.0.2",
   "description": "d-audio",
   "main": "src/lib/d-audio.js",

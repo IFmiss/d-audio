@@ -23,9 +23,9 @@ module.exports = {
 		publicPath: 'http://www.daiwei.org/components/d-audio/',
 		publicPath: '',
 		filename: 'd-audio.js',
-		libraryTarget: 'var',
-		library: 'Daudio',
-		libraryExport: 'default'
+		libraryTarget: 'umd',
+		// library: 'Daudio',
+		// libraryExport: 'default'
 	},
 	module: {
 		rules: [
@@ -89,11 +89,11 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new HtmlWebpackPlugin ({
-			filename: 'index.html',
-			template: 'index.html',
-			inject: true
-		}),
+		// new HtmlWebpackPlugin ({
+		// 	filename: 'index.html',
+		// 	template: 'index.html',
+		// 	inject: true
+		// }),
 		extractSass
 	],
 	devServer: {
