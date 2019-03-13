@@ -17,10 +17,15 @@ http://fm.zkbhj.com/#carousel-example-generic
 ![](https://user-images.githubusercontent.com/17402583/52839950-b8cbca80-3132-11e9-8842-9ff64c4f26a9.png)
 
 ### 食用方法
-安装：
+安装： 1.0.2以后的版本放在@dw下
 ```js
   npm install d-audio
 ```
+1.0.2以后的版本
+```js
+  npm install @dw/d-audio
+```
+
 
 引入
 

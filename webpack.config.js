@@ -16,8 +16,8 @@ const resolve = function (dir) {
 
 module.exports = {
 	entry: {
-		index: './src/index.js'
-		// index: './src/lib/d-audio.js'
+		// index: './src/index.js'
+		index: './src/lib/d-audio.js'
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -33,7 +33,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.css$/,
-        		use: ExtractTextPlugin.extract({
+        	use: ExtractTextPlugin.extract({
 					fallback:"style-loader",
 					use:["css-loader"]
 				})
