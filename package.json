@@ -44,9 +44,10 @@
     "url-parse": ">=1.4.3",
     "webpack": "^4.1.1",
     "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.1.1"
+    "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
+    "lodash": "^4.17.11",
     "node-sass": "^4.11.0",
     "node-vibrant": "^3.2.0-alpha"
   }
