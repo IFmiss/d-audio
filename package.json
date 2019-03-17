@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development --progress --colors",
-    "watch": "webpack --progress --colors --watch"
+    "watch": "webpack --progress --colors --watch",
+    "publish": "npm publish --access=public"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,6 @@
     "babel-loader": "^7.1.4",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-latest": "^6.24.1",
     "better-scroll": "^1.8.4",
     "compass-mixins": "^0.12.10",
     "css-loader": "^0.28.10",
