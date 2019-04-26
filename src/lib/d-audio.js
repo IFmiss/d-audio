@@ -1,4 +1,4 @@
-import './d-audio.scss'
+import './d-audio.less'
 import { dom } from './utils.js'
 import Vibrant from 'node-vibrant'
 export default class Dmusic {

@@ -16,8 +16,8 @@ const resolve = function (dir) {
 
 module.exports = {
 	entry: {
-		// index: './src/index.js'
-		index: './src/lib/d-audio.js'
+		index: './src/index.js'
+		// index: './src/lib/d-audio.js'
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -39,7 +39,7 @@ module.exports = {
 				})
 			},
 			{
-				test: /\.scss$/,
+				test: /\.less$/,
 				use: ExtractTextPlugin.extract({
 					fallback:"style-loader",
 					use:[
@@ -47,16 +47,9 @@ module.exports = {
 							loader: 'css-loader'
 						},
 						{
-							loader: 'sass-loader'
+							loader: 'less-loader'
 						}
 					]
-				})
-			},
-			{
-				test: /\.styl$/,
-				use: ExtractTextPlugin.extract({
-					fallback:"style-loader",
-					use:["css-loader","stylus-loader"]
 				})
 			},
 			{
@@ -91,18 +84,19 @@ module.exports = {
 		]
 	},
 	plugins: [
-		// new HtmlWebpackPlugin ({
-		// 	filename: 'index.html',
-		// 	template: 'index.html',
-		// 	inject: true
-		// }),
+		new HtmlWebpackPlugin ({
+			filename: 'index.html',
+			template: 'index.html',
+			inject: true
+		}),
 		extractSass
 	],
 	devServer: {
 		// 当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html。通过传入以下启用：
 		contentBase: "./",
+		host: '0.0.0.0',
 		// 端口号
-		port: 1996,
+		port: 1999,
 		//当有编译器错误或警告时，在浏览器中显示全屏覆盖。默认禁用。如果您只想显示编译器错误：
 		noInfo: true,
 		// 配置端口号

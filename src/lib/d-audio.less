@@ -1,5 +1,5 @@
-@import "node_modules/compass-mixins/lib/compass/css3";
 @import "./font-icon/style.css";
+
 @keyframes rotateMusicLogo {
   0% {
     transform: rotate(0);
@@ -36,21 +36,22 @@
 
 // 添加blur模糊效果
 // 如果不是绝对定位，父元素需要设置相对定位
-// $blur 为模糊的数值
-// $height 区域的高度
-// $position 为位置 默认50%
-@mixin blur($blur, $height, $position: 50%, $scale: 1.5) {
+// @blur 为模糊的数值
+// @height 区域的高度
+// @position 为位置 默认50%
+.blur(@blur, @height, @position: 50%, @scale: 1.5) {
 	position: absolute;
 	top: 0;
 	left: 0;
-	right: 0;
+  right: 0;
+  height: @height;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: $position;
-	-webkit-filter: blur($blur);
-	filter: blur($blur);
-	-webkit-transform: scale($scale);
-	transform: scale($scale);
+	background-position: @position;
+	-webkit-filter: blur(@blur);
+	filter: blur(@blur);
+	-webkit-transform: scale(@scale);
+	transform: scale(@scale);
 	overflow: hidden;
 	&::before{
 		content: '';
@@ -58,22 +59,21 @@
 		left: 0;
 		top: 0;
 		right: 0;
-		bottom: 0;
+    bottom: 0;
 		z-index: 1;
 		background: rgba(0,0,0,0.1);
 		transition: all 0.3s;
-	}
-	@if ($height == auto) {
-		bottom: 0;
-	}
-	@else {
-		height: $height;
 	}
 	&.draken{
 		&::before{
 			background: rgba(0,0,0,0.3);
 		}
 	}
+}
+
+.blur(@blur, @height, @position: 50%, @scale: 1.5) when (@height = auto) {
+  bottom: 0;
+  height: unset;
 }
 
 .audio-content{
@@ -83,14 +83,14 @@
   min-height: 50px;
   overflow: hidden;
   position: relative;
-  @include transition(all 0.3s);
+  transition: all 0.3s;
   -webkit-transform-origin: right center;
   -moz-transform-origin: right center;
   transform-origin: right center;
-  @include border-radius(6px);
-  @include user-select(none);
-  @include translate3d(0,0,0);
-  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 6px;
+  user-select: none;
+  transform: translate3d(0,0,0);
+  font-family: 'PingFangSC-Regular', Arial, Helvetica, sans-serif;
   &.cricle{
     min-width: 50px;
     min-height: 50px;
@@ -117,10 +117,10 @@
     position: relative;
     visibility: hidden;
     overflow: hidden;
-    @include transition(all 0.5s);
+    transition: all 0.5s;
     opacity: 0;
-    @include border-radius(50%);
-    @include translate3d(0,0,0);
+    border-radius: 50%;
+    transform: translate3d(0,0,0);
     -moz-animation: rotateMusicLogo 8s linear infinite;
     -webkit-animation: rotateMusicLogo 8s linear infinite;
     animation: rotateMusicLogo 8s linear infinite;
@@ -139,7 +139,7 @@
       bottom: 0;
       right: 0;
       border: 3px solid rgba(14, 90, 80, 0.397);
-      @include border-radius(50%);
+      border-radius: 50%;
     }
     &.active{
       -moz-animation-play-state: running;
@@ -159,9 +159,9 @@
     justify-content: center;
     visibility: visible;
     opacity: 1;
-    @include border-radius(8px);
-    @include transition(all 0.5s);
-    @include translate3d(0,0,0);
+    border-radius: 8px;
+    transition: all 0.5s;
+    transform: translate3d(0,0,0);
     .left-config{
       flex: 0 0 90px;
       height: 100%;
@@ -175,8 +175,8 @@
         width: 36px;
         height: 36px;
         background: rgba(0,0,0,0.2);
-        @include transition(all 0.5s);
-        @include border-radius(50%);
+        transition: all 0.5s;
+        border-radius: 50%;
         color: rgba(255,255,255,0.6);
         text-align: center;
         line-height: 36px;
@@ -207,7 +207,7 @@
       padding: 0 10px 0 5px;
       visibility: visible;
       opacity: 1;
-      @include transition(all 0.5s);
+      transition: all 0.5s;
       .m-title{
         font-size: 16px;
         padding: 1px 0;
@@ -240,7 +240,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    @include blur(10px, auto, center);
+    .blur(10px, auto, center);
   }
   .audio-loading{
     position: absolute;
@@ -254,7 +254,7 @@
     align-items: center;
     justify-content: center;
     visibility: hidden;
-    @include transition(all 0.5s);
+    transition: all 0.5s;
     opacity: 0;
     svg{
       width: 36px;
@@ -271,8 +271,8 @@
     height: 1px;
     bottom: 0;
     width: 0;
-    @include background(linear-gradient(to right, rgba(255, 56, 56, 0.1) 30%, rgba(255, 56, 56, 0.6)));
-    @include transition(all 0.5s);
+    background-image: linear-gradient(to right, rgba(255, 56, 56, 0.1) 30%, rgba(255, 56, 56, 0.6));
+    transition: all 0.5s;
     z-index: 4;
   }
 }

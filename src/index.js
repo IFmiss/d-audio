@@ -1,4 +1,4 @@
-import './style.scss'
+import './style.less'
 import 'static/font-icon/style.css'
 
 import dAudio from './lib/d-audio.js'

@@ -1,6 +1,6 @@
 {
   "name": "@dw/d-audio",
-  "version": "1.0.21",
+  "version": "1.0.3",
   "description": "d-audio",
   "main": "dist/d-audio.js",
   "scripts": {
@@ -31,15 +31,14 @@
     "better-scroll": "^1.8.4",
     "compass-mixins": "^0.12.10",
     "css-loader": "^0.28.10",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
     "deep-extend": ">=0.5.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.0.6",
     "macaddress": ">=0.2.9",
     "randomatic": ">=3.0.0",
-    "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
     "url-loader": "^1.0.1",
     "url-parse": ">=1.4.3",
     "webpack": "^4.1.1",
@@ -47,8 +46,6 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
-    "lodash": "^4.17.11",
-    "node-sass": "^4.11.0",
     "node-vibrant": "^3.2.0-alpha"
   }
 }

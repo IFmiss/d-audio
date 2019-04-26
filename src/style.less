@@ -1,0 +1,55 @@
+.colortext-l (@color1, @color2) {
+	position: relative;
+  background: -webkit-linear-gradient(left, @color1 , @color2);   /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, @color1, @color2);     /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, @color1, @color2);   /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, @color1 , @color2);    /* 标准的语法 */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+body,html{
+	margin: 0;
+	padding: 0;
+	height:100%;
+	background: #000;
+}
+body{
+	// background: red;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	.title{
+		font-size: 42px;
+		.colortext-l(rgba(50, 219, 154, 0.856), rgba(209, 163, 47, 0.808));
+		display: inline-block;
+		margin-top: 0;
+	}
+	.disc{
+		font-size: 14px;
+		color: #f1f1f1;
+	}
+	.github-info{
+		margin-top: 40px;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		span{
+			color: #ffffff;
+			font: Arial,"Helvetica Neue",Helvetica,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+			font-size:14px;
+		}
+  }
+  .btn{
+    width: 320px;
+    line-height: 40px;
+    background: #999;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    margin-top: 30px;
+  }
+}

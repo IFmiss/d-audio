@@ -43,7 +43,7 @@ const d = new dAudio ({
 ```
 
 es5安装：
-如果不再es6环境下的代码，可以引入该项目根目录的lib文件夹下，引入js和css即可
+如果不在es6环境下的代码，可以引入该项目根目录的lib文件夹下，引入js和css即可
 
 ```html
 <!DOCTYPE html>
