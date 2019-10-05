@@ -7,7 +7,7 @@ export default class Dmusic {
       // 音乐append的元素
       ele: '#d-audio',
       // 音乐封面
-      imageurl: 'http://www.daiwei.org/sunmmer.jpg',
+      imageurl: 'https://www.daiwei.site/static/logo/sunmmer.jpg',
       // 音乐地址
       src: '',
       // 音乐名字
@@ -43,7 +43,7 @@ export default class Dmusic {
     this.height = this.opt.ele.offsetHeight || 50
     this.duration = 0
     this.currentTime = 0
-    this.defaultimg = 'http://www.daiwei.org/sunmmer.jpg'
+    this.defaultimg = 'https://www.daiwei.site/static/logo/sunmmer.jpg'
 
     // 需要的元素
     this.dom = {
