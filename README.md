@@ -50,13 +50,13 @@ es5安装：
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="http://daiwei.org/components/d-audio/lib/d-audio.css">
+    <link rel="stylesheet" href="https://daiwei.site/static/resourse/d-audio/d-audio.css">
     <title>d-audio</title>
   </head>
   <body>
     <div class="d-audio" style="width: 300px;"></div>
   </body>
-  <script src="http://daiwei.org/components/d-audio/lib/d-audio.js"></script>
+  <script src="https://daiwei.site/static/resourse/d-audio/d-audio.js"></script>
   <script>
     var myAudio = new Daudio({
       ele: '.d-audio',

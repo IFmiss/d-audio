@@ -1,11 +1,17 @@
 const webpack = require('webpack'); 	// 用于访问内置插件
 const path = require('path');
-
+const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const outJsType = 'umd';
+const getPackageJson = function () {
+	const _packageJson = fs.readFileSync('./package.json')
+	return JSON.parse(_packageJson)
+}
+const version = getPackageJson().version
 
 const extractSass = new ExtractTextPlugin({
-		filename: "d-audio.css",
+		filename: `d-audio/d-audio.css`,
 		// filename: '[name].[hash].d-audio.css',
     disable: process.env.NODE_ENV === "development"
 });
@@ -14,19 +20,20 @@ const resolve = function (dir) {
 	return path.resolve(__dirname, dir);
 }
 
+
 module.exports = {
 	entry: {
-		index: './src/index.js'
-		// index: './src/lib/d-audio.js'
+		// index: './src/index.js'
+		index: './src/lib/d-audio.js'
 	},
 	output: {
 		path: path.resolve(__dirname, 'lib'),
-		path: path.resolve(__dirname, 'dist'),
+		// path: path.resolve(__dirname, 'dist'),
 		publicPath: '',
-		filename: 'd-audio.js',
-		libraryTarget: 'umd',
-		// library: 'Daudio',
-		// libraryExport: 'default'
+		filename: `d-audio/d-audio.js`,
+		libraryTarget: 'var',
+		library: 'Daudio',
+		libraryExport: 'default'
 	},
 	module: {
 		rules: [
@@ -83,11 +90,11 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new HtmlWebpackPlugin ({
-			filename: 'index.html',
-			template: 'index.html',
-			inject: true
-		}),
+		// new HtmlWebpackPlugin ({
+		// 	filename: 'index.html',
+		// 	template: 'index.html',
+		// 	inject: true
+		// }),
 		extractSass
 	],
 	devServer: {
