@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://www.github.com/ifmiss/d-audio.js"
+    "url": "https://www.github.com/ifmiss/d-audio"
   },
   "keywords": [
     "audio",
@@ -23,7 +23,7 @@
   "license": "ISC",
   "devDependencies": {
     "atob": ">=2.1.0",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-polyfill": "^6.26.0",
@@ -34,16 +34,16 @@
     "deep-extend": ">=0.5.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.0.6",
-    "less": "^3.9.0",
-    "less-loader": "^4.1.0",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
     "macaddress": ">=0.2.9",
     "randomatic": ">=3.0.0",
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
-    "url-parse": ">=1.4.3",
-    "webpack": "^4.1.1",
+    "url-parse": "^1.4.7",
+    "webpack": "^4.41.1",
     "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.2.1"
+    "webpack-dev-server": "^3.8.2"
   },
   "dependencies": {
     "d-utils": "^3.0.1",
