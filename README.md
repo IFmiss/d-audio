@@ -1,6 +1,6 @@
 # d-audio
 
-插件演示地址: https://www.daiwei.site/project/d_audio <br>
+插件演示地址: https://d-audio.daiwei.site/ <br>
 
 ## 使用者:
 http://fm.zkbhj.com/#carousel-example-generic

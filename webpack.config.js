@@ -20,9 +20,8 @@ module.exports = {
 		// index: './src/lib/d-audio.js'
 	},
 	output: {
+		path: path.resolve(__dirname, 'lib'),
 		path: path.resolve(__dirname, 'dist'),
-		// path: path.resolve(__dirname, 'package'),
-		// publicPath: 'http://www.daiwei.org/components/d-audio/',
 		publicPath: '',
 		filename: 'd-audio.js',
 		libraryTarget: 'umd',
